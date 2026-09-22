@@ -1,0 +1,526 @@
+html {
+    scroll-behavior: smooth;
+}* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Navbar */
+nav {
+    background-color: #222;
+    color: white;
+    padding: 20px 50px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav h2 {
+    font-size: 24px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 16px;
+}
+
+nav a:hover {
+    color: #00bcd4;
+}
+nav a {
+    position: relative;
+    transition: 0.3s;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    background-color: #00bcd4;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 120px 20px;
+
+    background: linear-gradient(135deg, #00bcd4, #0066ff);
+
+    color: white;
+}
+
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 35px;
+}
+
+.hero button {
+    padding: 14px 30px;
+    border: none;
+    border-radius: 30px;
+
+    background-color: white;
+    color: #0066ff;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    transform: scale(1.08);
+    background-color: #f1f1f1;
+}
+
+/* Services */
+.services {
+    padding: 70px 50px;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.service-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.service-card {
+    background-color: white;
+    padding: 35px 25px;
+    width: 30%;
+    min-height: 200px;
+    border-radius: 15px;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+}
+
+.service-card h3 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: #00a0b5;
+}
+
+.service-card p {
+    line-height: 1.7;
+    color: #555;
+}
+
+.service-card h3 {
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.service-card p {
+    line-height: 1.6;
+}
+
+/* About */
+.about {
+    background-color: white;
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    nav {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav h2 {
+        font-size: 22px;
+    }
+
+    nav a {
+        margin: 0 6px;
+        font-size: 14px;
+    }
+
+    .hero {
+        padding: 90px 20px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    .services {
+        padding: 50px 20px;
+    }
+
+    .services h2 {
+        font-size: 28px;
+    }
+
+    .service-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .service-card {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .about {
+        padding: 50px 20px;
+    }
+
+    .contact {
+        padding: 50px 20px;
+    }
+
+    .contact form {
+        width: 100%;
+    }
+}
+
+
+.contact h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.contact button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    background-color: #00bcd4;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.contact button:hover {
+    background-color: #0097a7;
+}/* Contact Form */
+
+.contact form {
+    max-width: 500px;
+    margin: 30px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact textarea {
+    height: 150px;
+    resize: none;
+}
+
+.contact form button {
+    padding: 14px;
+    border: none;
+    border-radius: 5px;
+    background-color: #00bcd4;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.contact form button:hover {
+    background-color: #0097a7;
+}/* Footer */
+
+footer {
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+footer h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+footer p {
+    font-size: 14px;
+    color: #bbb;
+}
+/* Card Animation */
+
+.service-card {
+    animation: cardAppear 0.8s ease;
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.service-card {
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+}
+/* Mobile Menu */
+
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+    .menu-btn {
+        display: block;
+    }
+
+    nav {
+        position: sticky;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    nav a {
+        margin: 0;
+    }
+}
+/* Success Message */
+
+.success-message {
+    display: none;
+    margin-top: 20px;
+    color: #00e676;
+    font-size: 17px;
+    font-weight: bold;
+}
+/* Social Links */
+
+.social-links {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    background-color: #00bcd4;
+    padding: 10px 18px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    background-color: #0097a7;
+    transform: translateY(-3px);
+}.service-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+/* About Section */
+
+.about {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #f5f5f5;
+}
+
+.about-content {
+    max-width: 700px;
+    margin: auto;
+    background-color: white;
+    padding: 45px 35px;
+    border-radius: 15px;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.about h2 {
+    font-size: 34px;
+    margin-bottom: 25px;
+    color: #00a0b5;
+}
+
+.about p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 15px;
+}/* Profile Section */
+
+.profile {
+    padding: 80px 20px;
+    text-align: center;
+
+    background: linear-gradient(135deg, #0066ff, #00bcd4);
+    color: white;
+}
+
+.profile-content {
+    max-width: 650px;
+    margin: auto;
+}
+
+.profile-icon {
+    font-size: 70px;
+    margin-bottom: 15px;
+}
+
+.profile h2 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.profile h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.profile p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+/* Profile Image */
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 5px solid white;
+
+    margin-bottom: 20px;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+} .profile-btn {
+    display: inline-block;
+    margin-bottom: 25px;
+    padding: 12px 25px;
+
+    background-color: white;
+    color: #0066ff;
+
+    text-decoration: none;
+    border-radius: 25px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.profile-btn:hover {
+    transform: scale(1.08);
+    background-color: #f1f1f1;
+} 
+/* Success Message Animation */
+
+.success-message {
+    animation: successAppear 0.5s ease;
+}
+
+@keyframes successAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
