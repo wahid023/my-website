@@ -106,3 +106,27 @@ function typeEffect() {
 }
 
 typeEffect();
+// SCROLL REVEAL ANIMATION
+
+const revealElements = document.querySelectorAll(
+    ".profile, .services, .skills, .projects, .about, .contact"
+);
+
+const revealOnScroll = () => {
+
+    revealElements.forEach((element) => {
+
+        const windowHeight = window.innerHeight;
+        const elementTop = element.getBoundingClientRect().top;
+
+        if (elementTop < windowHeight - 100) {
+            element.classList.add("reveal", "show");
+        }
+
+    });
+
+};
+
+window.addEventListener("scroll", revealOnScroll);
+
+revealOnScroll();
