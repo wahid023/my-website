@@ -32,10 +32,10 @@ themeBtn.addEventListener("click", () => {
     document.body.classList.toggle("light-mode");
 
     if (document.body.classList.contains("light-mode")) {
-        themeBtn.textContent = "🌙";
-    } else {
-        themeBtn.textContent = "☀️";
-    }
+    themeBtn.innerHTML = "🌙 <span>Theme</span>";
+} else {
+    themeBtn.innerHTML = "☀️ <span>Theme</span>";
+}
 
 });
 
