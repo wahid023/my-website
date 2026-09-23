@@ -1059,3 +1059,28 @@ body.light-mode .skill-bar {
     }
 
 }
+/* TYPING EFFECT */
+
+.typing-text {
+    min-height: 45px;
+}
+
+#typing {
+    color: #38bdf8;
+}
+
+#typing::after {
+    content: "|";
+    margin-left: 5px;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+
+    51%, 100% {
+        opacity: 0;
+    }
+}
