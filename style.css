@@ -1196,3 +1196,39 @@ body.light-mode .project-card h3 {
     opacity: 1;
     transform: translateY(0);
 }
+/* BACK TO TOP BUTTON */
+
+.back-to-top {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #0284c7;
+    color: white;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    display: none;
+
+    z-index: 999;
+
+    transition: 0.3s ease;
+}
+
+.back-to-top:hover {
+    background: #0369a1;
+    transform: translateY(-5px);
+}
+
+.back-to-top.show {
+    display: block;
+}
