@@ -1232,3 +1232,45 @@ body.light-mode .project-card h3 {
 .back-to-top.show {
     display: block;
 }
+/* THEME BUTTON */
+
+.theme-btn {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 8px 14px;
+
+    border: 1px solid #334155;
+    border-radius: 8px;
+
+    background: transparent;
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.theme-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.theme-btn span {
+    font-size: 14px;
+}
+
+/* LIGHT MODE */
+
+body.light-mode .theme-btn {
+    color: #0f172a;
+    border-color: #cbd5e1;
+}
+
+body.light-mode .theme-btn:hover {
+    background: #f1f5f9;
+}
