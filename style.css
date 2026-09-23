@@ -798,3 +798,153 @@ body.light-mode .about h2,
 body.light-mode .service-card h3 {
     color: #0f172a;
 }
+/* ================================
+   LIGHT MODE - FULL THEME
+================================ */
+
+body.light-mode {
+    background: #f8fafc;
+    color: #222;
+}
+
+/* Navbar */
+body.light-mode nav {
+    background: #ffffff;
+}
+
+body.light-mode nav h2 {
+    color: #0f172a;
+}
+
+body.light-mode .nav-links a {
+    color: #334155;
+}
+
+body.light-mode .nav-links a:hover {
+    color: #0284c7;
+}
+
+body.light-mode .menu-btn,
+body.light-mode .theme-btn {
+    color: #0f172a;
+}
+
+
+/* Hero */
+body.light-mode .hero {
+    background: linear-gradient(135deg, #dbeafe, #cffafe);
+    color: #0f172a;
+}
+
+body.light-mode .hero h1 {
+    color: #0f172a;
+}
+
+body.light-mode .hero h1 span {
+    color: #0284c7;
+}
+
+body.light-mode .hero h2 {
+    color: #334155;
+}
+
+body.light-mode .hero p:not(.hero-small) {
+    color: #475569;
+}
+
+
+/* Profile */
+body.light-mode .profile {
+    background: #ffffff;
+}
+
+body.light-mode .profile-text h2 {
+    color: #0f172a;
+}
+
+body.light-mode .profile-text h3 {
+    color: #0284c7;
+}
+
+body.light-mode .profile-text p:not(.section-small) {
+    color: #475569;
+}
+
+
+/* Services */
+body.light-mode .services {
+    background: #f1f5f9;
+}
+
+body.light-mode .services > h2 {
+    color: #0f172a;
+}
+
+body.light-mode .service-card {
+    background: #ffffff;
+}
+
+body.light-mode .service-card h3 {
+    color: #0f172a;
+}
+
+body.light-mode .service-card p {
+    color: #64748b;
+}
+
+
+/* About */
+body.light-mode .about {
+    background: #ffffff;
+}
+
+body.light-mode .about-content {
+    background: #f1f5f9;
+}
+
+body.light-mode .about h2 {
+    color: #0f172a;
+}
+
+body.light-mode .about p:not(.section-small) {
+    color: #475569;
+}
+
+
+/* Contact */
+body.light-mode .contact {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+body.light-mode .contact h2 {
+    color: #0f172a;
+}
+
+body.light-mode .contact input,
+body.light-mode .contact textarea {
+    background: #ffffff;
+    color: #0f172a;
+    border-color: #cbd5e1;
+}
+
+body.light-mode .social-links a {
+    background: #ffffff;
+    color: #0f172a;
+    border-color: #cbd5e1;
+}
+
+
+/* Footer */
+body.light-mode footer {
+    background: #ffffff;
+    color: #0f172a;
+}
+
+body.light-mode footer h3 {
+    color: #0f172a;
+}
+
+body.light-mode footer p {
+    color: #64748b;
+}
