@@ -1,71 +1,45 @@
-const learnMoreButton = document.querySelector(".hero button");
+// ================================
+// MOBILE MENU
+// ================================
 
-learnMoreButton.addEventListener("click", function () {
-    document.querySelector("#services").scrollIntoView({
-        behavior: "smooth"
-    });
+const menuBtn = document.querySelector(".menu-btn");
+const navLinks = document.querySelector(".nav-links");
+
+menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
 });
 
 
-const contactForm = document.querySelector(".contact form");
+// Close mobile menu after clicking a link
 
-contactForm.addEventListener("submit", function (event) {
+const navItems = document.querySelectorAll(".nav-links a");
+
+navItems.forEach((item) => {
+
+    item.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+    });
+
+});
+
+
+// ================================
+// CONTACT FORM
+// ================================
+
+const form = document.querySelector(".contact form");
+const successMessage = document.querySelector(".success-message");
+
+form.addEventListener("submit", (event) => {
 
     event.preventDefault();
 
-    const name = document.querySelector(".contact input[type='text']").value;
-    const email = document.querySelector(".contact input[type='email']").value;
-    const phone = document.querySelector(".contact input[type='tel']").value;
-    const message = document.querySelector(".contact textarea").value;
+    successMessage.style.display = "block";
 
+    form.reset();
 
-    // Check empty fields
-
-    if (name === "" || email === "" || phone === "" || message === "") {
-
-        alert("Please fill in all fields.");
-
-        return;
-    }
-
-
-    // Check email
-
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!emailPattern.test(email)) {
-
-        alert("Please enter a valid email address.");
-
-        return;
-    }
-    // Check phone number
-
-const phonePattern = /^[0-9]{11}$/;
-
-if (!phonePattern.test(phone)) {
-
-    alert("Please enter a valid 11 digit phone number.");
-
-    return;
-}
-
-
-    // Success message
-
-    document.querySelector(".success-message").style.display = "block";
-
-    contactForm.reset();
-
-});
-
-
-const menuButton = document.querySelector(".menu-btn");
-
-const navLinks = document.querySelector(".nav-links");
-
-menuButton.addEventListener("click", function () {
-
-    navLinks.classList.toggle("active");
+    setTimeout(() => {
+        successMessage.style.display = "none";
+    }, 4000);
 
 });
