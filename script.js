@@ -5,39 +5,42 @@
 const menuBtn = document.querySelector(".menu-btn");
 const navLinks = document.querySelector(".nav-links");
 
-menuBtn.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-});
-
-
-// Close mobile menu after clicking a link
+if (menuBtn && navLinks) {
+    menuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
+}
 
 const navItems = document.querySelectorAll(".nav-links a");
 
 navItems.forEach((item) => {
-
     item.addEventListener("click", () => {
-        navLinks.classList.remove("active");
+        if (navLinks) {
+            navLinks.classList.remove("active");
+        }
     });
-
 });
+
+
 // ================================
 // DARK / LIGHT MODE
 // ================================
 
 const themeBtn = document.getElementById("themeBtn");
 
-themeBtn.addEventListener("click", () => {
+if (themeBtn) {
+    themeBtn.addEventListener("click", () => {
 
-    document.body.classList.toggle("light-mode");
+        document.body.classList.toggle("light-mode");
 
-    if (document.body.classList.contains("light-mode")) {
-    themeBtn.innerHTML = "🌙 <span>Theme</span>";
-} else {
-    themeBtn.innerHTML = "☀️ <span>Theme</span>";
+        if (document.body.classList.contains("light-mode")) {
+            themeBtn.innerHTML = "🌙 <span>Theme</span>";
+        } else {
+            themeBtn.innerHTML = "☀️ <span>Theme</span>";
+        }
+
+    });
 }
-
-});
 
 
 // ================================
@@ -47,66 +50,97 @@ themeBtn.addEventListener("click", () => {
 const form = document.querySelector(".contact form");
 const successMessage = document.querySelector(".success-message");
 
-form.addEventListener("submit", (event) => {
+if (form && successMessage) {
 
-    event.preventDefault();
+    form.addEventListener("submit", (event) => {
 
-    successMessage.style.display = "block";
+        event.preventDefault();
 
-    form.reset();
+        successMessage.style.display = "block";
 
-    setTimeout(() => {
-        successMessage.style.display = "none";
-    }, 4000);
+        form.reset();
 
-});
+        setTimeout(() => {
+            successMessage.style.display = "none";
+        }, 4000);
+
+    });
+
+}
+
+
+// ================================
 // TYPING EFFECT
+// ================================
 
 const typingText = document.getElementById("typing");
 
-const words = [
-    "Web Developer",
-    "Designer",
-    "Learner"
-];
+if (typingText) {
 
-let wordIndex = 0;
-let charIndex = 0;
-let deleting = false;
+    const words = [
+        "Web Developer",
+        "Designer",
+        "Learner"
+    ];
 
-function typeEffect() {
+    let wordIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
 
-    const currentWord = words[wordIndex];
+    function typeEffect() {
 
-    if (!deleting) {
-        typingText.textContent = currentWord.substring(0, charIndex + 1);
-        charIndex++;
+        const currentWord = words[wordIndex];
 
-        if (charIndex === currentWord.length) {
-            deleting = true;
-            setTimeout(typeEffect, 1500);
-            return;
-        }
+        if (!deleting) {
 
-    } else {
-        typingText.textContent = currentWord.substring(0, charIndex - 1);
-        charIndex--;
+            typingText.textContent =
+                currentWord.substring(0, charIndex + 1);
 
-        if (charIndex === 0) {
-            deleting = false;
-            wordIndex++;
+            charIndex++;
 
-            if (wordIndex === words.length) {
-                wordIndex = 0;
+            if (charIndex === currentWord.length) {
+
+                deleting = true;
+
+                setTimeout(typeEffect, 1500);
+
+                return;
             }
+
+        } else {
+
+            typingText.textContent =
+                currentWord.substring(0, charIndex - 1);
+
+            charIndex--;
+
+            if (charIndex === 0) {
+
+                deleting = false;
+
+                wordIndex++;
+
+                if (wordIndex === words.length) {
+                    wordIndex = 0;
+                }
+
+            }
+
         }
+
+        setTimeout(
+            typeEffect,
+            deleting ? 70 : 120
+        );
     }
 
-    setTimeout(typeEffect, deleting ? 70 : 120);
+    typeEffect();
 }
 
-typeEffect();
+
+// ================================
 // SCROLL REVEAL ANIMATION
+// ================================
 
 const revealElements = document.querySelectorAll(
     ".profile, .services, .skills, .projects, .about, .contact"
@@ -117,226 +151,239 @@ const revealOnScroll = () => {
     revealElements.forEach((element) => {
 
         const windowHeight = window.innerHeight;
-        const elementTop = element.getBoundingClientRect().top;
+        const elementTop =
+            element.getBoundingClientRect().top;
 
         if (elementTop < windowHeight - 100) {
-            element.classList.add("reveal", "show");
+
+            element.classList.add(
+                "reveal",
+                "show"
+            );
+
         }
 
     });
 
 };
 
-window.addEventListener("scroll", revealOnScroll);
+window.addEventListener(
+    "scroll",
+    revealOnScroll
+);
 
 revealOnScroll();
+
+
+// ================================
 // BACK TO TOP BUTTON
+// ================================
 
-const backToTop = document.getElementById("backToTop");
+const backToTop =
+    document.getElementById("backToTop");
 
-window.addEventListener("scroll", () => {
+if (backToTop) {
 
-    if (window.scrollY > 400) {
-        backToTop.classList.add("show");
-    } else {
-        backToTop.classList.remove("show");
-    }
+    window.addEventListener("scroll", () => {
 
-});
+        if (window.scrollY > 400) {
 
-backToTop.addEventListener("click", () => {
+            backToTop.classList.add("show");
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+        } else {
+
+            backToTop.classList.remove("show");
+
+        }
+
     });
 
-});
+    backToTop.addEventListener("click", () => {
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    });
+
+}
+
+
 // ================================
 // PROJECT INFORMATION POPUP
 // ================================
 
-const projectModal = document.getElementById("projectModal");
+const projectModal =
+    document.getElementById("projectModal");
 
-const modalIcon = document.getElementById("modalIcon");
-const modalTitle = document.getElementById("modalTitle");
-const modalDescription = document.getElementById("modalDescription");
-const modalTech = document.getElementById("modalTech");
-const modalStatus = document.getElementById("modalStatus");
+const modalIcon =
+    document.getElementById("modalIcon");
+
+const modalTitle =
+    document.getElementById("modalTitle");
+
+const modalDescription =
+    document.getElementById("modalDescription");
+
+const modalTech =
+    document.getElementById("modalTech");
+
+const modalStatus =
+    document.getElementById("modalStatus");
 
 
 const projectData = {
 
     portfolio: {
+
         icon: "🌐",
+
         title: "Personal Portfolio",
+
         description:
             "This is my personal portfolio website where I can introduce myself, show my skills, services and projects. I built this website while learning modern web development.",
+
         tech: "HTML, CSS, JavaScript",
+
         status: "Currently Learning & Improving"
+
     },
 
 
     design: {
+
         icon: "💻",
+
         title: "Web Design Project",
+
         description:
             "A clean and responsive website design project focused on creating a modern, simple and user-friendly website interface.",
+
         tech: "HTML, CSS",
+
         status: "Learning Project"
+
     },
 
 
     javascript: {
+
         icon: "🚀",
+
         title: "JavaScript Project",
+
         description:
             "An interactive web project created to practice JavaScript. It focuses on making websites more dynamic and interactive.",
+
         tech: "HTML, CSS, JavaScript",
+
         status: "Coming Soon"
+
     }
 
 };
 
 
-function openProject(projectName) {
-
-    const project = projectData[projectName];
-
-    if (!project) {
-        return;
-    }
-
-    modalIcon.textContent = project.icon;
-    modalTitle.textContent = project.title;
-    modalDescription.textContent = project.description;
-    modalTech.textContent = project.tech;
-    modalStatus.textContent = project.status;
-
-    projectModal.classList.add("active");
-
-    document.body.style.overflow = "hidden";
-}
-
-
-function closeProject() {
-
-    projectModal.classList.remove("active");
-
-    document.body.style.overflow = "";
-}
-
-
-// Close popup when clicking outside
-
-projectModal.addEventListener("click", (event) => {
-
-    if (event.target === projectModal) {
-        closeProject();
-    }
-
-});
-
-
-// Close popup with Escape key
-
-document.addEventListener("keydown", (event) => {
-
-    if (event.key === "Escape") {
-        closeProject();
-    }
-
-});
-// ================================
-// PROJECT INFORMATION POPUP
-// ================================
-
-const projectModal = document.getElementById("projectModal");
-
-const modalIcon = document.getElementById("modalIcon");
-const modalTitle = document.getElementById("modalTitle");
-const modalDescription = document.getElementById("modalDescription");
-const modalTech = document.getElementById("modalTech");
-const modalStatus = document.getElementById("modalStatus");
-
-
-const projectData = {
-
-    portfolio: {
-        icon: "🌐",
-        title: "Personal Portfolio",
-        description:
-            "This is my personal portfolio website where I can introduce myself, show my skills, services and projects. I built this website while learning modern web development.",
-        tech: "HTML, CSS, JavaScript",
-        status: "Currently Learning & Improving"
-    },
-
-    design: {
-        icon: "💻",
-        title: "Web Design Project",
-        description:
-            "A clean and responsive website design project focused on creating a modern, simple and user-friendly website interface.",
-        tech: "HTML, CSS",
-        status: "Learning Project"
-    },
-
-    javascript: {
-        icon: "🚀",
-        title: "JavaScript Project",
-        description:
-            "An interactive web project created to practice JavaScript. It focuses on making websites more dynamic and interactive.",
-        tech: "HTML, CSS, JavaScript",
-        status: "Coming Soon"
-    }
-
-};
-
+// OPEN PROJECT
 
 function openProject(projectName) {
 
-    const project = projectData[projectName];
+    const project =
+        projectData[projectName];
 
-    if (!project) {
+    if (
+        !project ||
+        !projectModal
+    ) {
         return;
     }
 
-    modalIcon.textContent = project.icon;
-    modalTitle.textContent = project.title;
-    modalDescription.textContent = project.description;
-    modalTech.textContent = project.tech;
-    modalStatus.textContent = project.status;
+    if (modalIcon) {
+        modalIcon.textContent =
+            project.icon;
+    }
+
+    if (modalTitle) {
+        modalTitle.textContent =
+            project.title;
+    }
+
+    if (modalDescription) {
+        modalDescription.textContent =
+            project.description;
+    }
+
+    if (modalTech) {
+        modalTech.textContent =
+            project.tech;
+    }
+
+    if (modalStatus) {
+        modalStatus.textContent =
+            project.status;
+    }
 
     projectModal.classList.add("active");
 
-    document.body.style.overflow = "hidden";
+    document.body.style.overflow =
+        "hidden";
 }
 
+
+// CLOSE PROJECT
 
 function closeProject() {
 
+    if (!projectModal) {
+        return;
+    }
+
     projectModal.classList.remove("active");
 
-    document.body.style.overflow = "";
+    document.body.style.overflow =
+        "";
 }
 
 
-// Close popup when clicking outside
+// CLOSE WHEN CLICKING OUTSIDE
 
-projectModal.addEventListener("click", (event) => {
+if (projectModal) {
 
-    if (event.target === projectModal) {
-        closeProject();
+    projectModal.addEventListener(
+        "click",
+        (event) => {
+
+            if (
+                event.target ===
+                projectModal
+            ) {
+
+                closeProject();
+
+            }
+
+        }
+    );
+
+}
+
+
+// CLOSE WITH ESCAPE
+
+document.addEventListener(
+    "keydown",
+    (event) => {
+
+        if (
+            event.key === "Escape" &&
+            projectModal &&
+            projectModal.classList.contains("active")
+        ) {
+
+            closeProject();
+
+        }
+
     }
-
-});
-
-
-// Close popup with Escape key
-
-document.addEventListener("keydown", (event) => {
-
-    if (event.key === "Escape") {
-        closeProject();
-    }
-
-});
+);
