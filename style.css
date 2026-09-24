@@ -743,26 +743,40 @@ footer p {
         padding: 80px 20px;
     }
 }
+
+
 /* ================================
    THEME BUTTON
 ================================ */
 
 .theme-btn {
-    border: none;
-    background: transparent;
-    color: white;
+    display: flex;
+    align-items: center;
+    gap: 7px;
 
-    font-size: 22px;
+    padding: 8px 14px;
+
+    border: 1px solid #334155;
+    border-radius: 8px;
+
+    background: transparent;
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 600;
 
     cursor: pointer;
 
-    margin-left: 15px;
-
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .theme-btn:hover {
-    transform: scale(1.2) rotate(15deg);
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.theme-btn span {
+    font-size: 14px;
 }
 
 
@@ -775,39 +789,6 @@ body.light-mode {
     color: #222;
 }
 
-body.light-mode .profile,
-body.light-mode .about {
-    background: white;
-}
-
-body.light-mode .services {
-    background: #f1f5f9;
-}
-
-body.light-mode .service-card {
-    background: white;
-}
-
-body.light-mode .about-content {
-    background: #f8fafc;
-}
-
-body.light-mode .profile-text h2,
-body.light-mode .services > h2,
-body.light-mode .about h2,
-body.light-mode .service-card h3 {
-    color: #0f172a;
-}
-/* ================================
-   LIGHT MODE - FULL THEME
-================================ */
-
-body.light-mode {
-    background: #f8fafc;
-    color: #222;
-}
-
-/* Navbar */
 body.light-mode nav {
     background: #ffffff;
 }
@@ -829,8 +810,6 @@ body.light-mode .theme-btn {
     color: #0f172a;
 }
 
-
-/* Hero */
 body.light-mode .hero {
     background: linear-gradient(135deg, #dbeafe, #cffafe);
     color: #0f172a;
@@ -852,8 +831,6 @@ body.light-mode .hero p:not(.hero-small) {
     color: #475569;
 }
 
-
-/* Profile */
 body.light-mode .profile {
     background: #ffffff;
 }
@@ -870,8 +847,6 @@ body.light-mode .profile-text p:not(.section-small) {
     color: #475569;
 }
 
-
-/* Services */
 body.light-mode .services {
     background: #f1f5f9;
 }
@@ -892,8 +867,6 @@ body.light-mode .service-card p {
     color: #64748b;
 }
 
-
-/* About */
 body.light-mode .about {
     background: #ffffff;
 }
@@ -910,8 +883,6 @@ body.light-mode .about p:not(.section-small) {
     color: #475569;
 }
 
-
-/* Contact */
 body.light-mode .contact {
     background: #e2e8f0;
     color: #0f172a;
@@ -934,8 +905,6 @@ body.light-mode .social-links a {
     border-color: #cbd5e1;
 }
 
-
-/* Footer */
 body.light-mode footer {
     background: #ffffff;
     color: #0f172a;
@@ -948,6 +917,8 @@ body.light-mode footer h3 {
 body.light-mode footer p {
     color: #64748b;
 }
+
+
 /* ================================
    SKILLS
 ================================ */
@@ -1023,7 +994,6 @@ body.light-mode footer p {
     from {
         width: 0;
     }
-
 }
 
 
@@ -1046,20 +1016,9 @@ body.light-mode .skill-bar {
 }
 
 
-/* Mobile */
-
-@media (max-width: 768px) {
-
-    .skills {
-        padding: 80px 20px;
-    }
-
-    .skills h2 {
-        font-size: 32px;
-    }
-
-}
-/* TYPING EFFECT */
+/* ================================
+   TYPING EFFECT
+================================ */
 
 .typing-text {
     min-height: 45px;
@@ -1076,6 +1035,7 @@ body.light-mode .skill-bar {
 }
 
 @keyframes blink {
+
     0%, 50% {
         opacity: 1;
     }
@@ -1084,7 +1044,11 @@ body.light-mode .skill-bar {
         opacity: 0;
     }
 }
-/* PROJECTS SECTION */
+
+
+/* ================================
+   PROJECTS
+================================ */
 
 .projects {
     padding: 100px 20px;
@@ -1101,22 +1065,30 @@ body.light-mode .skill-bar {
 .projects-container {
     max-width: 1100px;
     margin: auto;
+
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+
     gap: 25px;
 }
 
 .project-card {
     background: #f8fafc;
+
     padding: 35px 25px;
+
     border-radius: 18px;
+
     border: 1px solid #e2e8f0;
+
     transition: 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.12);
 }
 
 .project-icon {
@@ -1136,23 +1108,36 @@ body.light-mode .skill-bar {
     margin-bottom: 25px;
 }
 
+
+/* Project Button */
+
 .project-btn {
     display: inline-block;
+
     padding: 10px 22px;
+
     background: #0284c7;
     color: white;
-    text-decoration: none;
+
+    border: none;
     border-radius: 8px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
     transition: 0.3s ease;
 }
 
 .project-btn:hover {
     background: #0369a1;
+
     transform: translateY(-2px);
 }
 
 
-/* LIGHT MODE */
+/* Projects Light Mode */
 
 body.light-mode .projects {
     background: #ffffff;
@@ -1167,39 +1152,32 @@ body.light-mode .project-card h3 {
 }
 
 
-/* MOBILE */
-
-@media (max-width: 768px) {
-
-    .projects {
-        padding: 80px 20px;
-    }
-
-    .projects h2 {
-        font-size: 32px;
-    }
-
-    .projects-container {
-        grid-template-columns: 1fr;
-    }
-
-}
-/* SCROLL REVEAL ANIMATION */
+/* ================================
+   SCROLL REVEAL
+================================ */
 
 .reveal {
     opacity: 0;
     transform: translateY(50px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
 }
 
 .reveal.show {
     opacity: 1;
     transform: translateY(0);
 }
-/* BACK TO TOP BUTTON */
+
+
+/* ================================
+   BACK TO TOP
+================================ */
 
 .back-to-top {
     position: fixed;
+
     right: 25px;
     bottom: 25px;
 
@@ -1232,183 +1210,192 @@ body.light-mode .project-card h3 {
 .back-to-top.show {
     display: block;
 }
-/* THEME BUTTON */
 
-.theme-btn {
+
+/* ================================
+   PROJECT INFORMATION POPUP
+================================ */
+
+.project-modal {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.75);
+
     display: flex;
+
     align-items: center;
-    gap: 7px;
+    justify-content: center;
 
-    padding: 8px 14px;
+    padding: 20px;
 
-    border: 1px solid #334155;
-    border-radius: 8px;
+    opacity: 0;
+    visibility: hidden;
 
-    background: transparent;
-    color: #ffffff;
+    transition: 0.3s ease;
 
-    font-size: 15px;
-    font-weight: 600;
+    z-index: 9999;
+}
+
+.project-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.project-modal-content {
+    position: relative;
+
+    width: 100%;
+    max-width: 600px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 40px;
+
+    text-align: center;
+
+    transform: translateY(30px) scale(0.95);
+
+    transition: 0.3s ease;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.project-modal.active .project-modal-content {
+    transform: translateY(0) scale(1);
+}
+
+.close-modal {
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #eeeeee;
+
+    font-size: 20px;
 
     cursor: pointer;
 
-    transition: 0.3s ease;
+    transition: 0.3s;
 }
 
-.theme-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateY(-2px);
+.close-modal:hover {
+    transform: rotate(90deg);
 }
 
-.theme-btn span {
-    font-size: 14px;
+.project-modal-icon {
+    font-size: 60px;
+
+    margin-bottom: 15px;
 }
 
-/* LIGHT MODE */
+.project-modal-content h2 {
+    margin-bottom: 20px;
 
-body.light-mode .theme-btn {
     color: #0f172a;
-    border-color: #cbd5e1;
 }
 
-body.light-mode .theme-btn:hover {
+.project-modal-content > p {
+    color: #666;
+
+    line-height: 1.8;
+
+    margin-bottom: 25px;
+}
+
+.project-details {
+    background: #f5f7fa;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    text-align: left;
+}
+
+.project-details p {
+    margin: 10px 0;
+
+    color: #555;
+}
+
+.project-details strong {
+    color: #111;
+}
+
+
+/* ================================
+   POPUP LIGHT MODE
+================================ */
+
+body.light-mode .project-modal-content {
+    background: #ffffff;
+}
+
+body.light-mode .project-modal-content h2 {
+    color: #0f172a;
+}
+
+body.light-mode .project-modal-content > p {
+    color: #475569;
+}
+
+body.light-mode .project-details {
     background: #f1f5f9;
 }
+
+body.light-mode .project-details p {
+    color: #475569;
+}
+
+body.light-mode .project-details strong {
+    color: #0f172a;
+}
+
+
 /* ================================
-   PROJECT INFORMATION POPUP
+   MOBILE
 ================================ */
 
-.project-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
+@media (max-width: 768px) {
 
-    width: 100%;
-    height: 100%;
+    .skills {
+        padding: 80px 20px;
+    }
 
-    background: rgba(0, 0, 0, 0.75);
+    .skills h2 {
+        font-size: 32px;
+    }
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    .projects {
+        padding: 80px 20px;
+    }
 
-    padding: 20px;
+    .projects h2 {
+        font-size: 32px;
+    }
 
-    opacity: 0;
-    visibility: hidden;
-
-    transition: 0.3s ease;
-
-    z-index: 9999;
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
 }
 
-
-.project-modal.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-
-.project-modal-content {
-    position: relative;
-
-    width: 100%;
-    max-width: 600px;
-
-    background: white;
-
-    border-radius: 20px;
-
-    padding: 40px;
-
-    text-align: center;
-
-    transform: translateY(30px) scale(0.95);
-
-    transition: 0.3s ease;
-
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-}
-
-
-.project-modal.active .project-modal-content {
-    transform: translateY(0) scale(1);
-}
-
-
-.close-modal {
-    position: absolute;
-
-    top: 15px;
-    right: 15px;
-
-    width: 40px;
-    height: 40px;
-
-    border: none;
-
-    border-radius: 50%;
-
-    background: #eeeeee;
-
-    font-size: 20px;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-
-.close-modal:hover {
-    transform: rotate(90deg);
-}
-
-
-.project-modal-icon {
-    font-size: 60px;
-
-    margin-bottom: 15px;
-}
-
-
-.project-modal-content h2 {
-    margin-bottom: 20px;
-}
-
-
-.project-modal-content > p {
-    color: #666;
-
-    line-height: 1.8;
-
-    margin-bottom: 25px;
-}
-
-
-.project-details {
-    background: #f5f7fa;
-
-    border-radius: 12px;
-
-    padding: 20px;
-
-    text-align: left;
-}
-
-
-.project-details p {
-    margin: 10px 0;
-
-    color: #555;
-}
-
-
-.project-details strong {
-    color: #111;
-}
-
-
-/* Mobile */
 
 @media (max-width: 600px) {
 
@@ -1423,156 +1410,4 @@ body.light-mode .theme-btn:hover {
     .project-modal-content h2 {
         font-size: 24px;
     }
-
-}
-/* ================================
-   PROJECT INFORMATION POPUP
-================================ */
-
-.project-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-
-    background: rgba(0, 0, 0, 0.75);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 20px;
-
-    opacity: 0;
-    visibility: hidden;
-
-    transition: 0.3s ease;
-
-    z-index: 9999;
-}
-
-
-.project-modal.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-
-.project-modal-content {
-    position: relative;
-
-    width: 100%;
-    max-width: 600px;
-
-    background: white;
-
-    border-radius: 20px;
-
-    padding: 40px;
-
-    text-align: center;
-
-    transform: translateY(30px) scale(0.95);
-
-    transition: 0.3s ease;
-
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-}
-
-
-.project-modal.active .project-modal-content {
-    transform: translateY(0) scale(1);
-}
-
-
-.close-modal {
-    position: absolute;
-
-    top: 15px;
-    right: 15px;
-
-    width: 40px;
-    height: 40px;
-
-    border: none;
-
-    border-radius: 50%;
-
-    background: #eeeeee;
-
-    font-size: 20px;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-
-.close-modal:hover {
-    transform: rotate(90deg);
-}
-
-
-.project-modal-icon {
-    font-size: 60px;
-
-    margin-bottom: 15px;
-}
-
-
-.project-modal-content h2 {
-    margin-bottom: 20px;
-}
-
-
-.project-modal-content > p {
-    color: #666;
-
-    line-height: 1.8;
-
-    margin-bottom: 25px;
-}
-
-
-.project-details {
-    background: #f5f7fa;
-
-    border-radius: 12px;
-
-    padding: 20px;
-
-    text-align: left;
-}
-
-
-.project-details p {
-    margin: 10px 0;
-
-    color: #555;
-}
-
-
-.project-details strong {
-    color: #111;
-}
-
-
-/* Mobile */
-
-@media (max-width: 600px) {
-
-    .project-modal-content {
-        padding: 30px 20px;
-    }
-
-    .project-modal-icon {
-        font-size: 50px;
-    }
-
-    .project-modal-content h2 {
-        font-size: 24px;
-    }
-
 }
