@@ -329,7 +329,13 @@ function openProject(projectName) {
         modalStatus.textContent =
             project.status;
     }
+if (modalLiveDemo) {
+    modalLiveDemo.href = project.liveDemo || "#";
+}
 
+if (modalGithub) {
+    modalGithub.href = project.github || "#";
+}
     projectModal.classList.add("active");
 
     document.body.style.overflow =
