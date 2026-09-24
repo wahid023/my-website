@@ -251,6 +251,8 @@ const projectData = {
         tech: "HTML, CSS, JavaScript",
 
         status: "Currently Learning & Improving"
+        liveDemo: "https://wahid023.github.io/my-website/",
+github: "https://github.com/wahid023/Piash"
 
     },
 
