@@ -1425,3 +1425,154 @@ body.light-mode .theme-btn:hover {
     }
 
 }
+/* ================================
+   PROJECT INFORMATION POPUP
+================================ */
+
+.project-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.75);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s ease;
+
+    z-index: 9999;
+}
+
+
+.project-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.project-modal-content {
+    position: relative;
+
+    width: 100%;
+    max-width: 600px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 40px;
+
+    text-align: center;
+
+    transform: translateY(30px) scale(0.95);
+
+    transition: 0.3s ease;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+
+.project-modal.active .project-modal-content {
+    transform: translateY(0) scale(1);
+}
+
+
+.close-modal {
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #eeeeee;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.close-modal:hover {
+    transform: rotate(90deg);
+}
+
+
+.project-modal-icon {
+    font-size: 60px;
+
+    margin-bottom: 15px;
+}
+
+
+.project-modal-content h2 {
+    margin-bottom: 20px;
+}
+
+
+.project-modal-content > p {
+    color: #666;
+
+    line-height: 1.8;
+
+    margin-bottom: 25px;
+}
+
+
+.project-details {
+    background: #f5f7fa;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    text-align: left;
+}
+
+
+.project-details p {
+    margin: 10px 0;
+
+    color: #555;
+}
+
+
+.project-details strong {
+    color: #111;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .project-modal-content {
+        padding: 30px 20px;
+    }
+
+    .project-modal-icon {
+        font-size: 50px;
+    }
+
+    .project-modal-content h2 {
+        font-size: 24px;
+    }
+
+}
