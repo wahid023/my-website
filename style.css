@@ -1411,3 +1411,54 @@ body.light-mode .project-details strong {
         font-size: 24px;
     }
 }
+/* PROJECT MODAL BUTTONS */
+
+.project-modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.modal-btn {
+    display: inline-block;
+    padding: 11px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.live-btn {
+    background: #0284c7;
+    color: white;
+}
+
+.live-btn:hover {
+    background: #0369a1;
+    transform: translateY(-2px);
+}
+
+.github-btn {
+    background: #1e293b;
+    color: white;
+}
+
+.github-btn:hover {
+    background: #0f172a;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+
+    .project-modal-buttons {
+        flex-direction: column;
+    }
+
+    .modal-btn {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+}
