@@ -29,6 +29,7 @@ navItems.forEach((item) => {
 const themeBtn = document.getElementById("themeBtn");
 
 if (themeBtn) {
+
     themeBtn.addEventListener("click", () => {
 
         document.body.classList.toggle("light-mode");
@@ -40,6 +41,7 @@ if (themeBtn) {
         }
 
     });
+
 }
 
 
@@ -132,9 +134,11 @@ if (typingText) {
             typeEffect,
             deleting ? 70 : 120
         );
+
     }
 
     typeEffect();
+
 }
 
 
@@ -151,6 +155,7 @@ const revealOnScroll = () => {
     revealElements.forEach((element) => {
 
         const windowHeight = window.innerHeight;
+
         const elementTop =
             element.getBoundingClientRect().top;
 
@@ -231,11 +236,17 @@ const modalTech =
 
 const modalStatus =
     document.getElementById("modalStatus");
+
 const modalLiveDemo =
     document.getElementById("modalLiveDemo");
 
 const modalGithub =
     document.getElementById("modalGithub");
+
+
+// ================================
+// PROJECT DATA
+// ================================
 
 const projectData = {
 
@@ -250,9 +261,13 @@ const projectData = {
 
         tech: "HTML, CSS, JavaScript",
 
-        status: "Currently Learning & Improving"
-        liveDemo: "https://wahid023.github.io/my-website/",
-github: "https://github.com/wahid023/Piash"
+        status: "Currently Learning & Improving",
+
+        liveDemo:
+            "https://wahid023.github.io/my-website/",
+
+        github:
+            "https://github.com/wahid023/Piash"
 
     },
 
@@ -268,7 +283,11 @@ github: "https://github.com/wahid023/Piash"
 
         tech: "HTML, CSS",
 
-        status: "Learning Project"
+        status: "Learning Project",
+
+        liveDemo: "#",
+
+        github: "#"
 
     },
 
@@ -284,14 +303,20 @@ github: "https://github.com/wahid023/Piash"
 
         tech: "HTML, CSS, JavaScript",
 
-        status: "Coming Soon"
+        status: "Coming Soon",
+
+        liveDemo: "#",
+
+        github: "#"
 
     }
 
 };
 
 
+// ================================
 // OPEN PROJECT
+// ================================
 
 function openProject(projectName) {
 
@@ -305,45 +330,64 @@ function openProject(projectName) {
         return;
     }
 
+
     if (modalIcon) {
         modalIcon.textContent =
             project.icon;
     }
+
 
     if (modalTitle) {
         modalTitle.textContent =
             project.title;
     }
 
+
     if (modalDescription) {
         modalDescription.textContent =
             project.description;
     }
+
 
     if (modalTech) {
         modalTech.textContent =
             project.tech;
     }
 
+
     if (modalStatus) {
         modalStatus.textContent =
             project.status;
     }
-if (modalLiveDemo) {
-    modalLiveDemo.href = project.liveDemo || "#";
-}
 
-if (modalGithub) {
-    modalGithub.href = project.github || "#";
-}
+
+    if (modalLiveDemo) {
+
+        modalLiveDemo.href =
+            project.liveDemo || "#";
+
+    }
+
+
+    if (modalGithub) {
+
+        modalGithub.href =
+            project.github || "#";
+
+    }
+
+
     projectModal.classList.add("active");
 
     document.body.style.overflow =
         "hidden";
+
 }
 
 
+// ================================
 // CLOSE PROJECT
+// ================================
 
 function closeProject() {
 
@@ -355,10 +399,13 @@ function closeProject() {
 
     document.body.style.overflow =
         "";
+
 }
 
 
+// ================================
 // CLOSE WHEN CLICKING OUTSIDE
+// ================================
 
 if (projectModal) {
 
@@ -381,7 +428,9 @@ if (projectModal) {
 }
 
 
+// ================================
 // CLOSE WITH ESCAPE
+// ================================
 
 document.addEventListener(
     "keydown",
