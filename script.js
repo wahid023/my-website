@@ -231,7 +231,11 @@ const modalTech =
 
 const modalStatus =
     document.getElementById("modalStatus");
+const modalLiveDemo =
+    document.getElementById("modalLiveDemo");
 
+const modalGithub =
+    document.getElementById("modalGithub");
 
 const projectData = {
 
