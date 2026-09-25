@@ -1462,3 +1462,85 @@ body.light-mode .project-details strong {
     }
 
 }
+/* ================================
+   MY JOURNEY SECTION
+================================ */
+
+.journey {
+    padding: 100px 8%;
+    text-align: center;
+}
+
+.journey-intro {
+    max-width: 650px;
+    margin: 15px auto 50px;
+    line-height: 1.7;
+    opacity: 0.8;
+}
+
+.journey-container {
+    max-width: 900px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.journey-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    text-align: left;
+    padding: 30px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s ease;
+}
+
+.journey-card:hover {
+    transform: translateY(-8px);
+}
+
+.journey-number {
+    min-width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 18px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.journey-card h3 {
+    margin: 0 0 10px;
+}
+
+.journey-card p {
+    margin: 0;
+    line-height: 1.6;
+    opacity: 0.75;
+}
+
+
+/* ================================
+   MOBILE JOURNEY
+================================ */
+
+@media (max-width: 768px) {
+
+    .journey {
+        padding: 80px 5%;
+    }
+
+    .journey-container {
+        grid-template-columns: 1fr;
+    }
+
+    .journey-card {
+        padding: 25px;
+    }
+
+}
