@@ -1544,3 +1544,146 @@ body.light-mode .project-details strong {
     }
 
 }
+/* ================================
+   MY JOURNEY - TIMELINE
+================================ */
+
+.journey {
+    padding: 100px 8%;
+    text-align: center;
+}
+
+.journey .section-small {
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.journey h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.journey-intro {
+    max-width: 650px;
+    margin: 0 auto 60px;
+    line-height: 1.7;
+    opacity: 0.75;
+}
+
+/* Timeline container */
+.journey-container {
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+}
+
+/* Middle line */
+.journey-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: currentColor;
+    opacity: 0.15;
+    transform: translateX(-50%);
+}
+
+/* Journey card */
+.journey-card {
+    position: relative;
+    width: 46%;
+    padding: 28px;
+    border-radius: 18px;
+    text-align: left;
+
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+
+    transition: 0.3s ease;
+}
+
+/* Left cards */
+.journey-card:nth-child(odd) {
+    align-self: flex-start;
+}
+
+/* Right cards */
+.journey-card:nth-child(even) {
+    align-self: flex-end;
+}
+
+/* Number */
+.journey-number {
+    min-width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    font-size: 17px;
+    font-weight: bold;
+
+    background: rgba(255, 255, 255, 0.12);
+    border: 2px solid currentColor;
+}
+
+/* Card heading */
+.journey-card h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+}
+
+/* Card text */
+.journey-card p {
+    margin: 0;
+    line-height: 1.6;
+    opacity: 0.75;
+}
+
+/* Hover effect */
+.journey-card:hover {
+    transform: translateY(-8px);
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 768px) {
+
+    .journey {
+        padding: 80px 5%;
+    }
+
+    .journey h2 {
+        font-size: 30px;
+    }
+
+    .journey-container::before {
+        left: 28px;
+    }
+
+    .journey-card {
+        width: 100%;
+        align-self: flex-start !important;
+        padding: 22px;
+    }
+
+    .journey-number {
+        min-width: 50px;
+        height: 50px;
+    }
+}
