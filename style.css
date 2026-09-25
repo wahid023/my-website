@@ -2073,3 +2073,26 @@ footer a:hover {
         padding: 30px 5%;
     }
 }
+/* ================================
+   SKILLS ANIMATION
+================================ */
+
+.skill-progress {
+    width: 0;
+    transition: width 1.5s ease;
+}
+
+/* HTML */
+.skill-progress.html {
+    width: 90%;
+}
+
+/* CSS */
+.skill-progress.css {
+    width: 80%;
+}
+
+/* JavaScript */
+.skill-progress.javascript {
+    width: 60%;
+}
