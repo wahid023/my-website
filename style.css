@@ -2032,3 +2032,44 @@ body.light-mode .project-details strong {
         padding: 25px 20px;
     }
 }
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    padding: 35px 8%;
+    text-align: center;
+
+    border-top: 1px solid rgba(128, 128, 128, 0.2);
+    margin-top: 50px;
+}
+
+footer p {
+    margin: 0;
+    opacity: 0.7;
+    line-height: 1.6;
+}
+
+footer strong {
+    opacity: 1;
+}
+
+/* Footer links */
+
+footer a {
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+footer a:hover {
+    opacity: 0.7;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    footer {
+        padding: 30px 5%;
+    }
+}
