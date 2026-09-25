@@ -1687,3 +1687,79 @@ body.light-mode .project-details strong {
         height: 50px;
     }
 }
+/* ================================
+   PROJECTS - PROFESSIONAL CARDS
+================================ */
+
+.projects {
+    padding: 100px 8%;
+    text-align: center;
+}
+
+.projects h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.project-container {
+    max-width: 1100px;
+    margin: 50px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.project-card {
+    padding: 35px 25px;
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    transition: 0.35s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.project-card h3 {
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.project-card p {
+    line-height: 1.7;
+    opacity: 0.75;
+    margin-bottom: 25px;
+}
+
+.project-card button {
+    padding: 11px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.project-card button:hover {
+    transform: scale(1.05);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .projects {
+        padding: 80px 5%;
+    }
+
+    .projects h2 {
+        font-size: 30px;
+    }
+
+    .project-container {
+        grid-template-columns: 1fr;
+    }
+}
