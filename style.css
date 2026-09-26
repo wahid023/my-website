@@ -1772,10 +1772,8 @@ body.light-mode .project-details strong {
     position: fixed;
     inset: 0;
     z-index: 9999;
-
     align-items: center;
     justify-content: center;
-
     padding: 20px;
     background: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(6px);
@@ -1785,121 +1783,140 @@ body.light-mode .project-details strong {
     display: flex;
 }
 
-.modal-content {
+.project-modal-content {
     position: relative;
     width: 100%;
-    max-width: 550px;
-
-    padding: 35px;
+    max-width: 600px;
+    padding: 40px;
     border-radius: 20px;
-
-    background: #ffffff;
+    background: white;
     color: #111827;
-
     text-align: center;
-
     animation: modalOpen 0.3s ease;
 }
 
-.modal-close {
+.close-modal {
     position: absolute;
     top: 15px;
-    right: 18px;
-
-    width: 35px;
-    height: 35px;
-
+    right: 15px;
+    width: 40px;
+    height: 40px;
     border: none;
     border-radius: 50%;
-
-    font-size: 22px;
-    cursor: pointer;
-
     background: #eeeeee;
-}
-
-.modal-close:hover {
-    transform: rotate(90deg);
-}
-
-.modal-content h2 {
-    margin: 10px 0 15px;
-    font-size: 28px;
-}
-
-.modal-content p {
-    line-height: 1.7;
-    margin-bottom: 25px;
-    opacity: 0.75;
-}
-
-.modal-links {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
-.modal-links a {
-    padding: 11px 20px;
-    border-radius: 8px;
-
-    text-decoration: none;
-    font-weight: bold;
-
-    background: #111827;
-    color: white;
-
+    color: #111827;
+    font-size: 20px;
+    cursor: pointer;
     transition: 0.3s ease;
 }
 
-.modal-links a:hover {
-    transform: translateY(-3px);
+.close-modal:hover {
+    transform: rotate(90deg);
 }
 
-.modal-info {
-    margin-top: 25px;
+.project-modal-icon {
+    font-size: 60px;
+    margin-bottom: 15px;
+}
 
+.project-modal-content h2 {
+    margin-bottom: 20px;
+    color: #0f172a;
+}
+
+.project-modal-content > p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.project-details {
+    background: #f5f7fa;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: left;
+}
+
+.project-details p {
+    margin: 10px 0;
+    color: #555;
+}
+
+.project-details strong {
+    color: #111;
+}
+
+.project-modal-buttons {
     display: flex;
     justify-content: center;
-    gap: 12px;
+    gap: 15px;
+    margin-top: 25px;
     flex-wrap: wrap;
 }
 
-.modal-info span {
-    padding: 7px 12px;
-    border-radius: 20px;
-
-    font-size: 13px;
-    background: #eeeeee;
+.modal-btn {
+    display: inline-block;
+    padding: 11px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
 }
 
-/* Animation */
+.live-btn {
+    background: #0284c7;
+    color: white;
+}
+
+.live-btn:hover {
+    background: #0369a1;
+    transform: translateY(-2px);
+}
+
+.github-btn {
+    background: #1e293b;
+    color: white;
+}
+
+.github-btn:hover {
+    background: #0f172a;
+    transform: translateY(-2px);
+}
 
 @keyframes modalOpen {
     from {
         opacity: 0;
         transform: scale(0.9);
     }
-
     to {
         opacity: 1;
         transform: scale(1);
     }
 }
 
-/* Mobile */
-
 @media (max-width: 600px) {
-
-    .modal-content {
-        padding: 28px 20px;
+    .project-modal-content {
+        padding: 30px 20px;
     }
 
-    .modal-content h2 {
+    .project-modal-icon {
+        font-size: 50px;
+    }
+
+    .project-modal-content h2 {
         font-size: 24px;
     }
+
+    .project-modal-buttons {
+        flex-direction: column;
+    }
+
+    .modal-btn {
+        width: 100%;
+        box-sizing: border-box;
+    }
 }
+
 /* ================================
    CONTACT SECTION
 ================================ */
