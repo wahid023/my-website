@@ -2207,3 +2207,40 @@ footer a:hover {
     opacity: 0.6;
     margin-top: 5px;
 }
+/* ================================
+   FAST SCRAPING BRAND
+================================ */
+
+.brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    line-height: 1;
+}
+
+.brand-name {
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+
+    background: linear-gradient(90deg, #38bdf8, #22d3ee);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    text-shadow: 0 0 18px rgba(56, 189, 248, 0.25);
+}
+
+.brand small {
+    display: block;
+
+    margin-top: 7px;
+
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2px;
+
+    color: #cbd5e1;
+    opacity: 0.9;
+}
