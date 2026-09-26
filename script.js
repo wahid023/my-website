@@ -80,9 +80,10 @@ const typingText = document.getElementById("typing");
 if (typingText) {
 
     const words = [
-        "Web Developer",
-        "Designer",
-        "Learner"
+        "Web Data Solutions",
+        "Web Scraping",
+        "Data Extraction",
+        "Web Automation"
     ];
 
     let wordIndex = 0;
@@ -147,7 +148,7 @@ if (typingText) {
 // ================================
 
 const revealElements = document.querySelectorAll(
-    ".profile, .services, .skills, .projects, .about, .contact"
+    ".profile, .services, .skills, .journey, .projects, .contact"
 );
 
 const revealOnScroll = () => {
@@ -323,65 +324,46 @@ function openProject(projectName) {
     const project =
         projectData[projectName];
 
-    if (
-        !project ||
-        !projectModal
-    ) {
+    if (!project || !projectModal) {
         return;
     }
 
-
     if (modalIcon) {
-        modalIcon.textContent =
-            project.icon;
+        modalIcon.textContent = project.icon;
     }
-
 
     if (modalTitle) {
-        modalTitle.textContent =
-            project.title;
+        modalTitle.textContent = project.title;
     }
-
 
     if (modalDescription) {
         modalDescription.textContent =
             project.description;
     }
 
-
     if (modalTech) {
         modalTech.textContent =
             project.tech;
     }
-
 
     if (modalStatus) {
         modalStatus.textContent =
             project.status;
     }
 
-
     if (modalLiveDemo) {
-
         modalLiveDemo.href =
             project.liveDemo || "#";
-
     }
-
 
     if (modalGithub) {
-
         modalGithub.href =
             project.github || "#";
-
     }
-
 
     projectModal.classList.add("active");
 
-    document.body.style.overflow =
-        "hidden";
-
+    document.body.style.overflow = "hidden";
 }
 
 
@@ -397,9 +379,7 @@ function closeProject() {
 
     projectModal.classList.remove("active");
 
-    document.body.style.overflow =
-        "";
-
+    document.body.style.overflow = "";
 }
 
 
@@ -413,13 +393,8 @@ if (projectModal) {
         "click",
         (event) => {
 
-            if (
-                event.target ===
-                projectModal
-            ) {
-
+            if (event.target === projectModal) {
                 closeProject();
-
             }
 
         }
@@ -448,14 +423,19 @@ document.addEventListener(
 
     }
 );
+
+
 // ================================
 // PAGE LOADER
 // ================================
 
 window.addEventListener("load", () => {
-    const loader = document.getElementById("loader");
+
+    const loader =
+        document.getElementById("loader");
 
     if (loader) {
         loader.classList.add("hide");
     }
+
 });
