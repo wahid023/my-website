@@ -265,7 +265,7 @@ const projectData = {
         status: "Currently Learning & Improving",
 
         liveDemo:
-            "https://wahid023.github.io/my-website/",
+            "https://wahid023.github.io/Piash/",
 
         github:
             "https://github.com/wahid023/Piash"
@@ -329,11 +329,13 @@ function openProject(projectName) {
     }
 
     if (modalIcon) {
-        modalIcon.textContent = project.icon;
+        modalIcon.textContent =
+            project.icon;
     }
 
     if (modalTitle) {
-        modalTitle.textContent = project.title;
+        modalTitle.textContent =
+            project.title;
     }
 
     if (modalDescription) {
@@ -363,7 +365,8 @@ function openProject(projectName) {
 
     projectModal.classList.add("active");
 
-    document.body.style.overflow = "hidden";
+    document.body.style.overflow =
+        "hidden";
 }
 
 
