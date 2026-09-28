@@ -1,4 +1,3 @@
-```javascript
 // ================================
 // MOBILE MENU
 // ================================
@@ -30,7 +29,6 @@ navItems.forEach((item) => {
 const themeBtn = document.getElementById("themeBtn");
 
 if (themeBtn) {
-
     themeBtn.addEventListener("click", () => {
 
         document.body.classList.toggle("light-mode");
@@ -42,7 +40,6 @@ if (themeBtn) {
         }
 
     });
-
 }
 
 
@@ -157,7 +154,6 @@ const revealOnScroll = () => {
     revealElements.forEach((element) => {
 
         const windowHeight = window.innerHeight;
-
         const elementTop =
             element.getBoundingClientRect().top;
 
@@ -430,21 +426,26 @@ document.addEventListener(
 
 
 // ================================
-// ================================
-// ================================
 // PAGE LOADER
 // ================================
 
 function hideLoader() {
 
-    const loader = document.getElementById("loader");
+    const loader =
+        document.getElementById("loader");
 
     if (loader) {
-        loader.style.display = "none";
+        loader.classList.add("hide");
     }
 
 }
 
-window.addEventListener("load", hideLoader);
+window.addEventListener(
+    "load",
+    hideLoader
+);
 
-document.addEventListener("DOMContentLoaded", hideLoader);
+document.addEventListener(
+    "DOMContentLoaded",
+    hideLoader
+);
