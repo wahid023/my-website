@@ -431,6 +431,7 @@ document.addEventListener(
 
 // ================================
 // ================================
+// ================================
 // PAGE LOADER
 // ================================
 
@@ -447,4 +448,3 @@ function hideLoader() {
 window.addEventListener("load", hideLoader);
 
 document.addEventListener("DOMContentLoaded", hideLoader);
-```
