@@ -565,34 +565,39 @@
 
     <form>
 
-        <input
-            type="text"
-            placeholder="Your Name"
-            required
-        >
+        <form id="contactForm">
 
-        <input
-            type="email"
-            placeholder="Your Email"
-            required
-        >
+    <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        required
+    >
 
-        <input
-            type="tel"
-            placeholder="Your Phone Number"
-        >
+    <input
+        type="email"
+        name="email"
+        placeholder="Your Email"
+        required
+    >
 
-        <textarea
-            placeholder="Tell us about your project..."
-            required
-        ></textarea>
+    <input
+        type="tel"
+        name="phone"
+        placeholder="Your Phone Number"
+    >
 
-        <button type="submit">
-            Send Message
-        </button>
+    <textarea
+        name="message"
+        placeholder="Tell us about your project..."
+        required
+    ></textarea>
 
-    </form>
+    <button type="submit">
+        Send Message
+    </button>
 
+</form>
     <p class="success-message">
         Message sent successfully! ✅
     </p>
