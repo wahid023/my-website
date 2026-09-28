@@ -44,7 +44,7 @@ if (themeBtn) {
 
 
 // ================================
-// CONTACT FORM
+// CONTACT FORM - FORMSPREE
 // ================================
 
 const form = document.querySelector(".contact form");
@@ -52,17 +52,67 @@ const successMessage = document.querySelector(".success-message");
 
 if (form && successMessage) {
 
-    form.addEventListener("submit", (event) => {
+    form.addEventListener("submit", async (event) => {
 
         event.preventDefault();
 
-        successMessage.style.display = "block";
+        const submitButton =
+            form.querySelector("button[type='submit']");
 
-        form.reset();
+        // Button loading state
+        if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.textContent = "Sending...";
+        }
 
-        setTimeout(() => {
-            successMessage.style.display = "none";
-        }, 4000);
+        const formData = new FormData(form);
+
+        try {
+
+            const response = await fetch(form.action, {
+                method: "POST",
+                body: formData,
+                headers: {
+                    "Accept": "application/json"
+                }
+            });
+
+            if (response.ok) {
+
+                successMessage.textContent =
+                    "Message sent successfully! ✅";
+
+                successMessage.style.display = "block";
+
+                form.reset();
+
+                setTimeout(() => {
+                    successMessage.style.display = "none";
+                }, 4000);
+
+            } else {
+
+                successMessage.textContent =
+                    "Something went wrong. Please try again. ❌";
+
+                successMessage.style.display = "block";
+
+            }
+
+        } catch (error) {
+
+            successMessage.textContent =
+                "Unable to send message. Please try again. ❌";
+
+            successMessage.style.display = "block";
+
+        }
+
+        // Restore button
+        if (submitButton) {
+            submitButton.disabled = false;
+            submitButton.textContent = "Send Message";
+        }
 
     });
 
@@ -154,6 +204,7 @@ const revealOnScroll = () => {
     revealElements.forEach((element) => {
 
         const windowHeight = window.innerHeight;
+
         const elementTop =
             element.getBoundingClientRect().top;
 
