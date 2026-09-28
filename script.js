@@ -430,17 +430,21 @@ document.addEventListener(
 
 
 // ================================
+// ================================
 // PAGE LOADER
 // ================================
 
-window.addEventListener("load", () => {
+function hideLoader() {
 
-    const loader =
-        document.getElementById("loader");
+    const loader = document.getElementById("loader");
 
     if (loader) {
-        loader.classList.add("hide");
+        loader.style.display = "none";
     }
 
-});
+}
+
+window.addEventListener("load", hideLoader);
+
+document.addEventListener("DOMContentLoaded", hideLoader);
 ```
