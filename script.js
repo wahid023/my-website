@@ -462,3 +462,22 @@ window.addEventListener("load", hideLoader);
 
 // Extra safety: never allow loader to stay forever
 setTimeout(hideLoader, 2000);
+// ================================
+// SCROLL PROGRESS BAR
+// ================================
+
+window.addEventListener("scroll", () => {
+
+    const scrollProgress = document.getElementById("scrollProgress");
+
+    if (!scrollProgress) return;
+
+    const scrollTop = window.scrollY;
+    const documentHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+
+    const scrollPercentage =
+        (scrollTop / documentHeight) * 100;
+
+    scrollProgress.style.width = scrollPercentage + "%";
+});
