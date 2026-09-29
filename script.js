@@ -29,17 +29,23 @@ navItems.forEach((item) => {
 const themeBtn = document.getElementById("themeBtn");
 
 if (themeBtn) {
+
     themeBtn.addEventListener("click", () => {
 
         document.body.classList.toggle("light-mode");
 
         if (document.body.classList.contains("light-mode")) {
+
             themeBtn.innerHTML = "🌙 <span>Theme</span>";
+
         } else {
+
             themeBtn.innerHTML = "☀️ <span>Theme</span>";
+
         }
 
     });
+
 }
 
 
@@ -170,7 +176,9 @@ if (typingText) {
                 if (wordIndex === words.length) {
                     wordIndex = 0;
                 }
+
             }
+
         }
 
         setTimeout(
@@ -225,9 +233,13 @@ if (backToTop) {
     window.addEventListener("scroll", () => {
 
         if (window.scrollY > 400) {
+
             backToTop.classList.add("show");
+
         } else {
+
             backToTop.classList.remove("show");
+
         }
 
     });
@@ -297,6 +309,7 @@ const projectData = {
 
         github:
             "https://github.com/wahid023/Piash"
+
     },
 
     design: {
@@ -315,6 +328,7 @@ const projectData = {
         liveDemo: "#",
 
         github: "#"
+
     },
 
     javascript: {
@@ -333,6 +347,7 @@ const projectData = {
         liveDemo: "#",
 
         github: "#"
+
     }
 
 };
@@ -359,7 +374,8 @@ function openProject(projectName) {
     }
 
     if (modalDescription) {
-        modalDescription.textContent = project.description;
+        modalDescription.textContent =
+            project.description;
     }
 
     if (modalTech) {
@@ -371,11 +387,13 @@ function openProject(projectName) {
     }
 
     if (modalLiveDemo) {
-        modalLiveDemo.href = project.liveDemo || "#";
+        modalLiveDemo.href =
+            project.liveDemo || "#";
     }
 
     if (modalGithub) {
-        modalGithub.href = project.github || "#";
+        modalGithub.href =
+            project.github || "#";
     }
 
     projectModal.classList.add("active");
@@ -428,19 +446,22 @@ document.addEventListener("keydown", (event) => {
         projectModal &&
         projectModal.classList.contains("active")
     ) {
+
         closeProject();
+
     }
 
 });
 
 
 // ================================
-// PAGE LOADER — FIXED
+// PAGE LOADER
 // ================================
 
 function hideLoader() {
 
-    const loader = document.getElementById("loader");
+    const loader =
+        document.getElementById("loader");
 
     if (loader) {
 
@@ -454,58 +475,70 @@ function hideLoader() {
 }
 
 
-// Hide loader as soon as HTML is ready
-document.addEventListener("DOMContentLoaded", hideLoader);
+// Hide loader when HTML is ready
+document.addEventListener(
+    "DOMContentLoaded",
+    hideLoader
+);
 
-// Hide again when everything is fully loaded
-window.addEventListener("load", hideLoader);
 
-// Extra safety: never allow loader to stay forever
-setTimeout(hideLoader, 2000);
+// Hide again when everything is loaded
+window.addEventListener(
+    "load",
+    hideLoader
+);
+
+
+// Extra safety
+setTimeout(
+    hideLoader,
+    2000
+);
+
+
 // ================================
 // SCROLL PROGRESS BAR
 // ================================
 
-window.addEventListener("scroll", () => {
+const scrollProgress =
+    document.getElementById("scrollProgress");
 
-    const scrollProgress = document.getElementById("scrollProgress");
+function updateScrollProgress() {
 
-    if (!scrollProgress) return;
+    if (!scrollProgress) {
+        return;
+    }
 
-    const scrollTop = window.scrollY;
+    const scrollTop =
+        window.scrollY;
+
     const documentHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
+        document.documentElement.scrollHeight -
+        window.innerHeight;
+
+    if (documentHeight <= 0) {
+
+        scrollProgress.style.width = "0%";
+
+        return;
+    }
 
     const scrollPercentage =
         (scrollTop / documentHeight) * 100;
 
-    scrollProgress.style.width = scrollPercentage + "%";
-});
-// ================================
-// BACK TO TOP BUTTON
-// ================================
-
-const backToTop = document.getElementById("backToTop");
-
-if (backToTop) {
-
-    window.addEventListener("scroll", () => {
-
-        if (window.scrollY > 400) {
-            backToTop.classList.add("show");
-        } else {
-            backToTop.classList.remove("show");
-        }
-
-    });
-
-    backToTop.addEventListener("click", () => {
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
-    });
+    scrollProgress.style.width =
+        scrollPercentage + "%";
 
 }
+
+window.addEventListener(
+    "scroll",
+    updateScrollProgress
+);
+
+window.addEventListener(
+    "resize",
+    updateScrollProgress
+);
+
+updateScrollProgress();
