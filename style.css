@@ -2468,3 +2468,31 @@ footer a:hover {
     }
 
 }
+/* ================================
+   SMOOTH SCROLL REVEAL
+================================ */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(50px) scale(0.98);
+    filter: blur(3px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease,
+        filter 0.8s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+}
+
+/* Slight delay for cards */
+
+.service-card.reveal,
+.project-card.reveal,
+.journey-card.reveal {
+    transition-duration: 0.9s;
+}
