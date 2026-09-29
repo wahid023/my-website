@@ -8,6 +8,24 @@
     <title>Fast Scraping | Web Data Solutions</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ================================
+           SCROLL REVEAL ANIMATION
+        ================================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+
 </head>
 
 <body>
@@ -88,7 +106,7 @@
          PROFILE SECTION
     ================================= -->
 
-    <section class="profile" id="profile">
+    <section class="profile reveal" id="profile">
 
         <div class="profile-content">
 
@@ -129,7 +147,7 @@
          SERVICES SECTION
     ================================= -->
 
-    <section class="services" id="services">
+    <section class="services reveal" id="services">
 
         <p class="section-small">
             OUR SERVICES
@@ -207,7 +225,7 @@
          SKILLS SECTION
     ================================= -->
 
-    <section class="skills" id="skills">
+    <section class="skills reveal" id="skills">
 
         <p class="section-small">
             MY SKILLS
@@ -274,7 +292,7 @@
          JOURNEY SECTION
     ================================= -->
 
-    <section class="journey" id="journey">
+    <section class="journey reveal" id="journey">
 
         <p class="section-small">
             MY JOURNEY
@@ -378,7 +396,7 @@
          PROJECTS SECTION
     ================================= -->
 
-    <section class="projects" id="projects">
+    <section class="projects reveal" id="projects">
 
         <p class="section-small">
             MY WORK
@@ -550,7 +568,7 @@
          CONTACT SECTION
     ================================= -->
 
-  <section class="contact" id="contact">
+  <section class="contact reveal" id="contact">
 
     <p class="section-small">
         GET IN TOUCH
@@ -643,6 +661,29 @@
     <!-- ================================
          JAVASCRIPT
     ================================= -->
+
+
+    <script>
+        // ================================
+        // SCROLL REVEAL ANIMATION
+        // ================================
+
+        const revealElements = document.querySelectorAll(".reveal");
+
+        const revealOnScroll = () => {
+            revealElements.forEach((element) => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add("show");
+                }
+            });
+        };
+
+        window.addEventListener("scroll", revealOnScroll);
+        revealOnScroll();
+    </script>
 
     <script src="script.js"></script>
 
