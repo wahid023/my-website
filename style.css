@@ -2588,3 +2588,21 @@ footer a:hover {
     }
 
 }
+/* ================================
+   ACTIVE NAVBAR LINK
+================================ */
+
+nav .nav-links a.active {
+    color: #00bcd4;
+}
+
+nav .nav-links a.active::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Smooth underline */
+
+nav .nav-links a::after {
+    transition: width 0.3s ease;
+}
