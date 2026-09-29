@@ -59,7 +59,6 @@ if (form && successMessage) {
         const submitButton =
             form.querySelector("button[type='submit']");
 
-        // Button loading state
         if (submitButton) {
             submitButton.disabled = true;
             submitButton.textContent = "Sending...";
@@ -96,7 +95,6 @@ if (form && successMessage) {
                     "Something went wrong. Please try again. ❌";
 
                 successMessage.style.display = "block";
-
             }
 
         } catch (error) {
@@ -105,10 +103,8 @@ if (form && successMessage) {
                 "Unable to send message. Please try again. ❌";
 
             successMessage.style.display = "block";
-
         }
 
-        // Restore button
         if (submitButton) {
             submitButton.disabled = false;
             submitButton.textContent = "Send Message";
@@ -174,63 +170,51 @@ if (typingText) {
                 if (wordIndex === words.length) {
                     wordIndex = 0;
                 }
-
             }
-
         }
 
         setTimeout(
             typeEffect,
             deleting ? 70 : 120
         );
-
     }
 
     typeEffect();
-
 }
 
 
 // ================================
-// SCROLL REVEAL ANIMATION
+// SCROLL REVEAL
 // ================================
 
 const revealElements = document.querySelectorAll(
     ".profile, .services, .skills, .journey, .projects, .contact"
 );
 
-const revealOnScroll = () => {
+function revealOnScroll() {
 
     revealElements.forEach((element) => {
-
-        const windowHeight = window.innerHeight;
 
         const elementTop =
             element.getBoundingClientRect().top;
 
-        if (elementTop < windowHeight - 100) {
+        if (elementTop < window.innerHeight - 100) {
 
-            element.classList.add(
-                "reveal",
-                "show"
-            );
+            element.classList.add("reveal");
+            element.classList.add("show");
 
         }
 
     });
 
-};
+}
 
-window.addEventListener(
-    "scroll",
-    revealOnScroll
-);
-
+window.addEventListener("scroll", revealOnScroll);
 revealOnScroll();
 
 
 // ================================
-// BACK TO TOP BUTTON
+// BACK TO TOP
 // ================================
 
 const backToTop =
@@ -241,13 +225,9 @@ if (backToTop) {
     window.addEventListener("scroll", () => {
 
         if (window.scrollY > 400) {
-
             backToTop.classList.add("show");
-
         } else {
-
             backToTop.classList.remove("show");
-
         }
 
     });
@@ -265,7 +245,7 @@ if (backToTop) {
 
 
 // ================================
-// PROJECT INFORMATION POPUP
+// PROJECT MODAL
 // ================================
 
 const projectModal =
@@ -317,9 +297,7 @@ const projectData = {
 
         github:
             "https://github.com/wahid023/Piash"
-
     },
-
 
     design: {
 
@@ -337,9 +315,7 @@ const projectData = {
         liveDemo: "#",
 
         github: "#"
-
     },
-
 
     javascript: {
 
@@ -357,7 +333,6 @@ const projectData = {
         liveDemo: "#",
 
         github: "#"
-
     }
 
 };
@@ -369,52 +344,43 @@ const projectData = {
 
 function openProject(projectName) {
 
-    const project =
-        projectData[projectName];
+    const project = projectData[projectName];
 
     if (!project || !projectModal) {
         return;
     }
 
     if (modalIcon) {
-        modalIcon.textContent =
-            project.icon;
+        modalIcon.textContent = project.icon;
     }
 
     if (modalTitle) {
-        modalTitle.textContent =
-            project.title;
+        modalTitle.textContent = project.title;
     }
 
     if (modalDescription) {
-        modalDescription.textContent =
-            project.description;
+        modalDescription.textContent = project.description;
     }
 
     if (modalTech) {
-        modalTech.textContent =
-            project.tech;
+        modalTech.textContent = project.tech;
     }
 
     if (modalStatus) {
-        modalStatus.textContent =
-            project.status;
+        modalStatus.textContent = project.status;
     }
 
     if (modalLiveDemo) {
-        modalLiveDemo.href =
-            project.liveDemo || "#";
+        modalLiveDemo.href = project.liveDemo || "#";
     }
 
     if (modalGithub) {
-        modalGithub.href =
-            project.github || "#";
+        modalGithub.href = project.github || "#";
     }
 
     projectModal.classList.add("active");
 
-    document.body.style.overflow =
-        "hidden";
+    document.body.style.overflow = "hidden";
 }
 
 
@@ -435,87 +401,64 @@ function closeProject() {
 
 
 // ================================
-// CLOSE WHEN CLICKING OUTSIDE
+// CLOSE OUTSIDE MODAL
 // ================================
 
 if (projectModal) {
 
-    projectModal.addEventListener(
-        "click",
-        (event) => {
+    projectModal.addEventListener("click", (event) => {
 
-            if (event.target === projectModal) {
-                closeProject();
-            }
-
+        if (event.target === projectModal) {
+            closeProject();
         }
-    );
+
+    });
 
 }
 
 
 // ================================
-// CLOSE WITH ESCAPE
+// CLOSE WITH ESC
 // ================================
 
-document.addEventListener(
-    "keydown",
-    (event) => {
+document.addEventListener("keydown", (event) => {
 
-        if (
-            event.key === "Escape" &&
-            projectModal &&
-            projectModal.classList.contains("active")
-        ) {
-
-            closeProject();
-
-        }
-
+    if (
+        event.key === "Escape" &&
+        projectModal &&
+        projectModal.classList.contains("active")
+    ) {
+        closeProject();
     }
-);
+
+});
 
 
 // ================================
-// PAGE LOADER
+// PAGE LOADER — FIXED
 // ================================
 
 function hideLoader() {
 
-    const loader =
-        document.getElementById("loader");
+    const loader = document.getElementById("loader");
 
     if (loader) {
-        loader.classList.add("hide");
+
+        loader.style.display = "none";
+        loader.style.visibility = "hidden";
+        loader.style.opacity = "0";
+        loader.style.pointerEvents = "none";
+
     }
 
 }
 
-window.addEventListener(
-    "load",
-    hideLoader
-);
 
-document.addEventListener(
-    "DOMContentLoaded",
-    hideLoader
-);
-// ================================
-// SCROLL REVEAL ANIMATION
-// ================================
+// Hide loader as soon as HTML is ready
+document.addEventListener("DOMContentLoaded", hideLoader);
 
-const revealElements = document.querySelectorAll(".reveal");
+// Hide again when everything is fully loaded
+window.addEventListener("load", hideLoader);
 
-const revealOnScroll = () => {
-    revealElements.forEach((element) => {
-        const windowHeight = window.innerHeight;
-        const elementTop = element.getBoundingClientRect().top;
-
-        if (elementTop < windowHeight - 100) {
-            element.classList.add("show");
-        }
-    });
-};
-
-window.addEventListener("scroll", revealOnScroll);
-revealOnScroll();
+// Extra safety: never allow loader to stay forever
+setTimeout(hideLoader, 2000);
