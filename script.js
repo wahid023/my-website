@@ -542,3 +542,51 @@ window.addEventListener(
 );
 
 updateScrollProgress();
+// ================================
+// ACTIVE NAVBAR SECTION
+// ================================
+
+const sections = document.querySelectorAll(
+    "section[id]"
+);
+
+const navbarLinks = document.querySelectorAll(
+    ".nav-links a"
+);
+
+function updateActiveNav() {
+
+    let currentSection = "";
+
+    sections.forEach((section) => {
+
+        const sectionTop =
+            section.getBoundingClientRect().top;
+
+        if (sectionTop <= 150) {
+            currentSection = section.getAttribute("id");
+        }
+
+    });
+
+    navbarLinks.forEach((link) => {
+
+        link.classList.remove("active");
+
+        const linkTarget =
+            link.getAttribute("href");
+
+        if (linkTarget === "#" + currentSection) {
+            link.classList.add("active");
+        }
+
+    });
+
+}
+
+window.addEventListener(
+    "scroll",
+    updateActiveNav
+);
+
+updateActiveNav();
