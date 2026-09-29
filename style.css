@@ -2496,3 +2496,21 @@ footer a:hover {
 .journey-card.reveal {
     transition-duration: 0.9s;
 }
+/* ================================
+   SCROLL PROGRESS BAR
+================================ */
+
+#scrollProgress {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 0%;
+    height: 4px;
+
+    background: linear-gradient(90deg, #00bcd4, #2196f3);
+
+    z-index: 99999;
+
+    transition: width 0.1s linear;
+}
