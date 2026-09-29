@@ -15,9 +15,14 @@
         ================================= */
 
         .reveal {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.reveal-hidden {
             opacity: 0;
             transform: translateY(40px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
         }
 
         .reveal.show {
@@ -668,21 +673,31 @@
         // SCROLL REVEAL ANIMATION
         // ================================
 
-        const revealElements = document.querySelectorAll(".reveal");
+        document.addEventListener("DOMContentLoaded", () => {
+            const revealElements = document.querySelectorAll(".reveal");
 
-        const revealOnScroll = () => {
             revealElements.forEach((element) => {
-                const windowHeight = window.innerHeight;
-                const elementTop = element.getBoundingClientRect().top;
+                const rect = element.getBoundingClientRect();
 
-                if (elementTop < windowHeight - 100) {
-                    element.classList.add("show");
+                if (rect.top > window.innerHeight - 100) {
+                    element.classList.add("reveal-hidden");
                 }
             });
-        };
 
-        window.addEventListener("scroll", revealOnScroll);
-        revealOnScroll();
+            const revealOnScroll = () => {
+                revealElements.forEach((element) => {
+                    const elementTop = element.getBoundingClientRect().top;
+
+                    if (elementTop < window.innerHeight - 100) {
+                        element.classList.remove("reveal-hidden");
+                        element.classList.add("show");
+                    }
+                });
+            };
+
+            window.addEventListener("scroll", revealOnScroll);
+            revealOnScroll();
+        });
     </script>
 
     <script src="script.js"></script>
