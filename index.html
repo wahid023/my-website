@@ -10,6 +10,21 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
+        /* Safety fix: never let the loading screen cover the website */
+        #loader {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
+        }
+
+        body {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+    </style>
+
+    <style>
         /* ================================
            SCROLL REVEAL ANIMATION
         ================================= */
