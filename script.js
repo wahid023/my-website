@@ -590,3 +590,27 @@ window.addEventListener(
 );
 
 updateActiveNav();
+// ================================
+// INTERACTIVE LIGHT
+// ================================
+
+const lightSwitch = document.getElementById("lightSwitch");
+const room = document.querySelector(".room");
+const lightStatus = document.getElementById("lightStatus");
+
+if (lightSwitch && room && lightStatus) {
+
+    lightSwitch.addEventListener("click", () => {
+
+        room.classList.toggle("light-on");
+        lightSwitch.classList.toggle("on");
+
+        if (room.classList.contains("light-on")) {
+            lightStatus.textContent = "LIGHT ON";
+        } else {
+            lightStatus.textContent = "LIGHT OFF";
+        }
+
+    });
+
+}
