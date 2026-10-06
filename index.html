@@ -251,37 +251,172 @@
      INTERACTIVE LIGHT
 ================================ -->
 
+<!-- ================================
+     REALISTIC INTERACTIVE LIGHT
+================================ -->
+
 <section class="light-section" id="light">
 
     <div class="light-container">
 
-        <h2>Interactive Light</h2>
-        <p>Turn the light on and off</p>
+        <div class="light-heading">
+            <p class="section-small">SPECIAL FEATURE</p>
+
+            <h2>Interactive Light</h2>
+
+            <p>
+                Turn on the light to reveal my contact.
+            </p>
+        </div>
+
+
+        <!-- REALISTIC ROOM -->
 
         <div class="room">
 
-            <!-- Ceiling Light -->
+            <!-- Ceiling -->
+
             <div class="ceiling">
-                <div class="bulb"></div>
+
+                <div class="ceiling-light">
+
+                    <div class="bulb">
+
+                        <div class="bulb-filament"></div>
+
+                    </div>
+
+                </div>
+
             </div>
 
-            <!-- Wall Switch -->
+
+            <!-- LIGHT GLOW -->
+
+            <div class="light-glow"></div>
+
+
+            <!-- CONTACT PANEL -->
+
+            <div class="light-contact">
+
+                <div class="contact-glow"></div>
+
+                <div class="contact-content">
+
+                    <p class="contact-small">
+                        GET IN TOUCH
+                    </p>
+
+                    <h2>Contact Me</h2>
+
+                    <p class="contact-description">
+                        Have a project or idea?
+                        Let's talk.
+                    </p>
+
+
+                    <form
+                        action="https://formspree.io/f/xqpawkra"
+                        method="POST"
+                    >
+
+                        <div class="contact-input">
+
+                            <input
+                                type="text"
+                                name="name"
+                                placeholder="Your Name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="contact-input">
+
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="Your Email"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="contact-input">
+
+                            <textarea
+                                name="message"
+                                placeholder="Your Message"
+                                rows="4"
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="light-contact-btn"
+                        >
+                            Send Message
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+
+            <!-- WALL SWITCH -->
+
             <div class="wall-switch">
+
                 <div class="switch-box">
-                    <button id="lightSwitch" class="switch-button">
+
+                    <button
+                        id="lightSwitch"
+                        class="switch-button"
+                        type="button"
+                        aria-label="Toggle light"
+                    >
                         <span></span>
                     </button>
+
                 </div>
+
+                <p class="switch-label">
+                    SWITCH
+                </p>
+
             </div>
+
+
+            <!-- SMALL ROOM DECOR -->
+
+            <div class="room-floor"></div>
+
+            <div class="room-shadow"></div>
 
         </div>
 
-        <p id="lightStatus">LIGHT OFF</p>
+
+        <div class="light-status-wrapper">
+
+            <span class="status-dot"></span>
+
+            <p id="lightStatus">
+                LIGHT OFF
+            </p>
+
+        </div>
 
     </div>
 
 </section>
-
     <!-- ================================
          SKILLS SECTION
     ================================= -->
