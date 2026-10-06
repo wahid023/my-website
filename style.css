@@ -2650,7 +2650,7 @@ nav .nav-links a::after {
 .room {
     position: relative;
     max-width: 1050px;
-    height: 560px;
+    height: 700px;
     margin: auto;
     overflow: hidden;
     border-radius: 18px;
