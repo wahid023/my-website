@@ -2609,164 +2609,713 @@ nav .nav-links a::after {
 /* ================================
    INTERACTIVE LIGHT
 ================================ */
+/* ================================
+   REALISTIC INTERACTIVE LIGHT
+================================ */
 
 .light-section {
-    min-height: 650px;
-    padding: 80px 20px;
-    background: #111;
+    min-height: 820px;
+    padding: 90px 20px 70px;
+    background:
+        radial-gradient(circle at 50% 0%, rgba(30, 41, 59, 0.45), transparent 45%),
+        #020617;
     color: white;
     text-align: center;
+    overflow: hidden;
 }
 
-.light-container h2 {
-    font-size: 35px;
-    margin-bottom: 10px;
+.light-heading {
+    position: relative;
+    z-index: 5;
+    margin-bottom: 35px;
 }
 
-.light-container > p {
-    color: #aaa;
-    margin-bottom: 40px;
+.light-heading .section-small {
+    color: #38bdf8;
 }
 
-/* ROOM */
+.light-heading h2 {
+    font-size: 42px;
+    margin-bottom: 8px;
+}
+
+.light-heading > p:last-child {
+    color: #94a3b8;
+}
+
+/* ================================
+   REALISTIC ROOM
+================================ */
 
 .room {
     position: relative;
-    max-width: 900px;
-    height: 400px;
+    max-width: 1050px;
+    height: 560px;
     margin: auto;
-    background: #171717;
-    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 0 30px rgba(0,0,0,0.7);
+    border-radius: 18px;
+    isolation: isolate;
+
+    background:
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(180deg, #080b12 0%, #10151f 62%, #070a10 100%);
+
+    background-size: 45px 45px, 45px 45px, auto;
+
+    border: 1px solid rgba(148, 163, 184, 0.16);
+
+    box-shadow:
+        0 35px 90px rgba(0, 0, 0, 0.65),
+        inset 0 0 80px rgba(0, 0, 0, 0.55);
 }
 
-/* CEILING */
+.room::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -3;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.035) 0 1px,
+            transparent 1px 100%
+        );
+
+    background-size: 160px 100%;
+    opacity: .45;
+}
+
+/* ================================
+   CEILING
+================================ */
 
 .ceiling {
     position: absolute;
+    left: 0;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 120px;
-    height: 35px;
-    background: #333;
-    border-radius: 0 0 20px 20px;
+
+    width: 100%;
+    height: 92px;
+
+    background:
+        linear-gradient(180deg, #202938, #111827);
+
+    border-bottom: 2px solid #334155;
+
+    box-shadow: 0 12px 35px rgba(0,0,0,.45);
 }
 
-/* BULB */
+.ceiling::after {
+    content: "";
+
+    position: absolute;
+    left: 8%;
+    right: 8%;
+    bottom: 10px;
+
+    height: 2px;
+
+    background: rgba(148,163,184,.12);
+}
+
+/* ================================
+   CEILING LAMP
+================================ */
+
+.ceiling-light {
+    position: absolute;
+
+    left: 50%;
+    top: 18px;
+
+    width: 150px;
+    height: 58px;
+
+    transform: translateX(-50%);
+
+    border-radius: 0 0 80px 80px;
+
+    background:
+        linear-gradient(180deg, #475569, #1e293b);
+
+    box-shadow:
+        inset 0 -8px 12px rgba(0,0,0,.45),
+        0 8px 20px rgba(0,0,0,.45);
+}
+
+.ceiling-light::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 8px;
+
+    width: 42px;
+    height: 7px;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background: #64748b;
+}
+
+/* ================================
+   BULB
+================================ */
 
 .bulb {
     position: absolute;
-    width: 55px;
-    height: 55px;
-    background: #333;
-    border-radius: 50%;
-    top: 25px;
+
     left: 50%;
+    bottom: -18px;
+
+    width: 48px;
+    height: 48px;
+
     transform: translateX(-50%);
-    transition: 0.4s ease;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #475569,
+            #111827 70%
+        );
+
+    border: 2px solid #0f172a;
+
+    transition:
+        background .5s ease,
+        box-shadow .5s ease,
+        transform .5s ease;
 }
 
-/* LIGHT GLOW */
+.bulb-filament {
+    position: absolute;
+
+    left: 50%;
+    top: 13px;
+
+    width: 13px;
+    height: 18px;
+
+    transform: translateX(-50%);
+
+    border: 2px solid #334155;
+    border-top: 0;
+
+    border-radius: 0 0 10px 10px;
+
+    opacity: .55;
+
+    transition: .5s ease;
+}
 
 .room.light-on .bulb {
-    background: #fff4a3;
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #fffef0,
+            #ffd166 65%,
+            #f59e0b
+        );
+
+    transform: translateX(-50%) scale(1.04);
+
     box-shadow:
-        0 0 20px #fff4a3,
-        0 0 50px #ffe66d,
-        0 0 100px #ffd700,
-        0 0 180px #ffd700;
+        0 0 12px #fff7bf,
+        0 0 35px #ffe082,
+        0 0 75px rgba(255, 193, 7, .9),
+        0 0 150px rgba(255, 174, 0, .7);
 }
 
-/* ROOM LIGHT */
+.room.light-on .bulb-filament {
+    border-color: #fffdf0;
 
-.room.light-on {
-    background: radial-gradient(
-        circle at 50% 15%,
-        #4a4020,
-        #171717 65%
-    );
+    box-shadow:
+        0 0 8px #fff;
+
+    opacity: 1;
 }
 
-/* SWITCH */
+/* ================================
+   WARM LIGHT BEAM
+================================ */
+
+.light-glow {
+    position: absolute;
+
+    left: 50%;
+    top: 70px;
+
+    width: 700px;
+    height: 430px;
+
+    transform: translateX(-50%);
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(255, 210, 90, .95) 0%,
+            rgba(255, 194, 70, .55) 18%,
+            rgba(255, 178, 50, .18) 42%,
+            transparent 72%
+        );
+
+    opacity: 0;
+
+    filter: blur(10px);
+
+    transition: opacity .7s ease;
+}
+
+.room.light-on .light-glow {
+    opacity: 1;
+}
+
+/* ================================
+   CONTACT PANEL
+================================ */
+
+.light-contact {
+    position: absolute;
+
+    left: 50%;
+    top: 125px;
+
+    width: min(590px, 68%);
+
+    transform:
+        translateX(-50%)
+        translateY(18px);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease,
+        visibility .7s ease;
+}
+
+.room.light-on .light-contact {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+.contact-glow {
+    position: absolute;
+
+    inset: -25px;
+
+    border-radius: 28px;
+
+    background:
+        rgba(255, 194, 70, .18);
+
+    filter: blur(28px);
+
+    z-index: -1;
+}
+
+.contact-content {
+    padding: 28px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(12, 16, 24, .78);
+
+    border:
+        1px solid rgba(255, 224, 150, .28);
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 25px 55px rgba(0,0,0,.5),
+        inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+.contact-small {
+    margin-bottom: 5px;
+
+    color: #fbbf24;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+.light-contact h2 {
+    margin-bottom: 3px;
+    font-size: 31px;
+}
+
+.contact-description {
+    margin-bottom: 17px;
+
+    color: #cbd5e1;
+
+    font-size: 14px;
+}
+
+.light-contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-input input,
+.contact-input textarea {
+    width: 100%;
+
+    padding: 11px 13px;
+
+    border:
+        1px solid rgba(148, 163, 184, .2);
+
+    border-radius: 9px;
+
+    outline: none;
+
+    background:
+        rgba(15, 23, 42, .8);
+
+    color: white;
+
+    font-size: 14px;
+
+    transition: .3s ease;
+}
+
+.contact-input textarea {
+    resize: none;
+    min-height: 75px;
+}
+
+.contact-input input::placeholder,
+.contact-input textarea::placeholder {
+    color: #94a3b8;
+}
+
+.contact-input input:focus,
+.contact-input textarea:focus {
+    border-color: #fbbf24;
+
+    box-shadow:
+        0 0 0 3px rgba(251, 191, 36, .08);
+}
+
+.light-contact-btn {
+    padding: 12px 20px;
+
+    border: none;
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f59e0b,
+            #fbbf24
+        );
+
+    color: #111827;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: .3s ease;
+}
+
+.light-contact-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(251, 191, 36, .28);
+}
+
+/* ================================
+   WALL SWITCH
+================================ */
 
 .wall-switch {
     position: absolute;
-    right: 80px;
-    top: 150px;
+
+    right: 55px;
+    top: 205px;
+
+    z-index: 10;
 }
 
 .switch-box {
-    width: 75px;
-    height: 120px;
-    background: #ddd;
-    border-radius: 8px;
-    padding: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-}
+    position: relative;
 
-/* BUTTON */
+    width: 76px;
+    height: 132px;
+
+    padding: 11px;
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f8fafc,
+            #cbd5e1
+        );
+
+    border: 1px solid #94a3b8;
+
+    box-shadow:
+        8px 12px 20px rgba(0,0,0,.35),
+        inset 2px 2px 4px rgba(255,255,255,.8);
+}
 
 .switch-button {
-    width: 50px;
-    height: 90px;
-    border: none;
-    border-radius: 5px;
-    background: #999;
-    cursor: pointer;
-    position: relative;
-    transition: 0.2s;
-}
+    width: 54px;
+    height: 108px;
 
-/* SWITCH HANDLE */
+    padding: 0;
+
+    border: 0;
+    border-radius: 7px;
+
+    background: #334155;
+
+    box-shadow:
+        inset 0 3px 7px rgba(0,0,0,.55),
+        0 2px 4px rgba(255,255,255,.4);
+
+    cursor: pointer;
+}
 
 .switch-button span {
     position: absolute;
-    width: 38px;
-    height: 45px;
-    background: #eee;
-    left: 6px;
-    top: 5px;
-    border-radius: 5px;
-    box-shadow: 0 3px 5px rgba(0,0,0,0.4);
-    transition: 0.25s;
-}
 
-/* ON POSITION */
+    left: 19px;
+    top: 18px;
+
+    width: 38px;
+    height: 55px;
+
+    border-radius: 7px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f8fafc,
+            #cbd5e1
+        );
+
+    box-shadow:
+        0 5px 8px rgba(0,0,0,.4),
+        inset 1px 1px 2px white;
+
+    transition: .25s ease;
+}
 
 .switch-button.on span {
-    top: 40px;
+    top: 68px;
 }
 
-/* STATUS */
+.switch-label {
+    margin-top: 10px;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: #64748b;
+}
+
+/* ================================
+   ROOM FLOOR + SHADOW
+================================ */
+
+.room-floor {
+    position: absolute;
+
+    left: -5%;
+    bottom: -35px;
+
+    width: 110%;
+    height: 125px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            #111827,
+            #05070b
+        );
+
+    background-size: 65px 65px;
+
+    transform:
+        perspective(400px)
+        rotateX(55deg);
+
+    transform-origin: bottom;
+}
+
+.room-shadow {
+    position: absolute;
+
+    left: 50%;
+    bottom: 55px;
+
+    width: 330px;
+    height: 28px;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background: rgba(0,0,0,.75);
+
+    filter: blur(12px);
+}
+
+/* ================================
+   LIGHT STATUS
+================================ */
+
+.light-status-wrapper {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    margin-top: 20px;
+}
 
 #lightStatus {
-    margin-top: 25px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    color: #777;
+    margin: 0;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    color: #64748b;
 }
 
-.room.light-on + #lightStatus {
-    color: #ffd700;
+.status-dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #475569;
+
+    box-shadow:
+        0 0 0 transparent;
+
+    transition: .4s ease;
 }
 
+.room.light-on ~ .light-status-wrapper .status-dot {
+    background: #fbbf24;
 
-/* MOBILE */
+    box-shadow:
+        0 0 14px #fbbf24;
+}
 
-@media (max-width: 600px) {
+.room.light-on ~ .light-status-wrapper #lightStatus {
+    color: #fbbf24;
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 768px) {
+
+    .light-section {
+        padding: 75px 14px 60px;
+    }
+
+    .light-heading h2 {
+        font-size: 32px;
+    }
 
     .room {
-        height: 350px;
+        height: 600px;
+    }
+
+    .light-contact {
+        top: 125px;
+
+        width:
+            calc(100% - 130px);
+    }
+
+    .contact-content {
+        padding: 22px 18px;
+    }
+
+    .light-contact h2 {
+        font-size: 26px;
     }
 
     .wall-switch {
-        right: 30px;
-        top: 150px;
+        right: 25px;
+        top: 360px;
     }
 
-    .light-container h2 {
-        font-size: 28px;
+    .light-glow {
+        width: 560px;
+    }
+}
+
+@media (max-width: 520px) {
+
+    .room {
+        height: 630px;
+    }
+
+    .light-contact {
+        top: 120px;
+
+        width:
+            calc(100% - 45px);
+    }
+
+    .wall-switch {
+        right: 50%;
+        top: 475px;
+
+        transform:
+            translateX(50%);
+    }
+
+    .switch-label {
+        text-align: center;
+    }
+
+    .ceiling-light {
+        width: 125px;
     }
 }
