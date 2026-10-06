@@ -1,7 +1,9 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,7 +12,11 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* Safety fix: never let the loading screen cover the website */
+
+        /* ================================
+           LOADER SAFETY FIX
+        ================================= */
+
         #loader {
             display: none !important;
             visibility: hidden !important;
@@ -22,9 +28,8 @@
             opacity: 1 !important;
             visibility: visible !important;
         }
-    </style>
 
-    <style>
+
         /* ================================
            SMOOTH SCROLL REVEAL
         ================================= */
@@ -51,11 +56,14 @@
             transform: translateY(0) scale(1);
             filter: blur(0);
         }
+
     </style>
 
 </head>
 
+
 <body>
+
 
     <!-- ================================
          SCROLL PROGRESS BAR
@@ -64,14 +72,21 @@
     <div id="scrollProgress"></div>
 
 
+
     <!-- ================================
          LOADING SCREEN
     ================================= -->
 
     <div id="loader">
+
         <div class="loader-circle"></div>
-        <p>Loading...</p>
+
+        <p>
+            Loading...
+        </p>
+
     </div>
+
 
 
     <!-- ================================
@@ -81,34 +96,76 @@
     <nav>
 
         <div class="brand">
-            <img src="logo.png" alt="Fast Scraping Logo">
+
+            <img
+                src="logo.png"
+                alt="Fast Scraping Logo"
+            >
+
         </div>
 
-        <button class="menu-btn">☰</button>
 
-        <button class="theme-btn" id="themeBtn">
+        <button class="menu-btn">
+            ☰
+        </button>
+
+
+        <button
+            class="theme-btn"
+            id="themeBtn"
+        >
             🌙 <span>Theme</span>
         </button>
 
+
         <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#profile">Profile</a>
-            <a href="#services">Services</a>
-            <a href="#skills">Skills</a>
-            <a href="#journey">Journey</a>
-            <a href="#projects">Projects</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#profile">
+                Profile
+            </a>
+
+            <a href="#services">
+                Services
+            </a>
+
+            <a href="#skills">
+                Skills
+            </a>
+
+            <a href="#journey">
+                Journey
+            </a>
+
+            <a href="#projects">
+                Projects
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
         </div>
 
     </nav>
+
 
 
     <!-- ================================
          HERO SECTION
     ================================= -->
 
-    <section class="hero" id="home">
+    <section
+        class="hero"
+        id="home"
+    >
 
         <div class="hero-content">
 
@@ -116,18 +173,31 @@
                 WELCOME TO FAST SCRAPING
             </p>
 
-            <h1>Fast Scraping</h1>
+
+            <h1>
+                Fast Scraping
+            </h1>
+
 
             <h2 class="typing-text">
-                <span id="typing">Web Data Solutions</span>
+
+                <span id="typing">
+                    Web Data Solutions
+                </span>
+
             </h2>
+
 
             <p>
                 We provide fast and reliable web data solutions
                 for modern businesses and projects.
             </p>
 
-            <a href="#services" class="hero-btn">
+
+            <a
+                href="#services"
+                class="hero-btn"
+            >
                 Explore Our Services
             </a>
 
@@ -136,13 +206,18 @@
     </section>
 
 
+
     <!-- ================================
          PROFILE SECTION
     ================================= -->
 
-    <section class="profile reveal" id="profile">
+    <section
+        class="profile reveal"
+        id="profile"
+    >
 
         <div class="profile-content">
+
 
             <img
                 src="profile.jpg.jpeg"
@@ -150,15 +225,23 @@
                 class="profile-image"
             >
 
+
             <div class="profile-text">
 
                 <p class="section-small">
                     ABOUT ME
                 </p>
 
-                <h2>Hi, I'm Wahid</h2>
 
-                <h3>Founder & Web Developer</h3>
+                <h2>
+                    Hi, I'm Wahid
+                </h2>
+
+
+                <h3>
+                    Founder & Web Developer
+                </h3>
+
 
                 <p>
                     I am learning web development and building
@@ -166,7 +249,11 @@
                     I am also working with web data and automation.
                 </p>
 
-                <a href="#contact" class="profile-btn">
+
+                <a
+                    href="#contact"
+                    class="profile-btn"
+                >
                     Contact Me
                 </a>
 
@@ -177,17 +264,25 @@
     </section>
 
 
+
     <!-- ================================
          SERVICES SECTION
     ================================= -->
 
-    <section class="services reveal" id="services">
+    <section
+        class="services reveal"
+        id="services"
+    >
 
         <p class="section-small">
             OUR SERVICES
         </p>
 
-        <h2>Web Data Solutions</h2>
+
+        <h2>
+            Web Data Solutions
+        </h2>
+
 
         <p class="services-intro">
             Fast and reliable solutions for collecting,
@@ -197,13 +292,18 @@
 
         <div class="service-container">
 
+
             <div class="service-card">
 
                 <div class="service-icon">
                     🌐
                 </div>
 
-                <h3>Web Scraping</h3>
+
+                <h3>
+                    Web Scraping
+                </h3>
+
 
                 <p>
                     Extract useful information from websites
@@ -213,13 +313,18 @@
             </div>
 
 
+
             <div class="service-card">
 
                 <div class="service-icon">
                     📊
                 </div>
 
-                <h3>Data Extraction</h3>
+
+                <h3>
+                    Data Extraction
+                </h3>
+
 
                 <p>
                     Collect and structure web data into
@@ -229,13 +334,18 @@
             </div>
 
 
+
             <div class="service-card">
 
                 <div class="service-icon">
                     ⚡
                 </div>
 
-                <h3>Automation</h3>
+
+                <h3>
+                    Automation
+                </h3>
+
 
                 <p>
                     Automate repetitive web data tasks
@@ -244,251 +354,133 @@
 
             </div>
 
+
         </div>
 
     </section>
-<!-- ================================
-     INTERACTIVE LIGHT
-================================ -->
 
-<!-- ================================
-     REALISTIC INTERACTIVE LIGHT
-================================ -->
 
-<section class="light-section" id="light">
 
-    <div class="light-container">
-
-        <div class="light-heading">
-            <p class="section-small">SPECIAL FEATURE</p>
-
-            <h2>Interactive Light</h2>
-
-            <p>
-                Turn on the light to reveal my contact.
-            </p>
-        </div>
-
-
-        <!-- REALISTIC ROOM -->
-
-        <div class="room">
-
-            <!-- Ceiling -->
-
-            <div class="ceiling">
-
-                <div class="ceiling-light">
-
-                    <div class="bulb">
-
-                        <div class="bulb-filament"></div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- LIGHT GLOW -->
-
-            <div class="light-glow"></div>
-
-
-            <!-- CONTACT PANEL -->
-
-            <div class="light-contact">
-
-                <div class="contact-glow"></div>
-
-                <div class="contact-content">
-
-                    <p class="contact-small">
-                        GET IN TOUCH
-                    </p>
-
-                    <h2>Contact Me</h2>
-
-                    <p class="contact-description">
-                        Have a project or idea?
-                        Let's talk.
-                    </p>
-
-
-                    <form
-                        action="https://formspree.io/f/xqpawkra"
-                        method="POST"
-                    >
-
-                        <div class="contact-input">
-
-                            <input
-                                type="text"
-                                name="name"
-                                placeholder="Your Name"
-                                required
-                            >
-
-                        </div>
-
-
-                        <div class="contact-input">
-
-                            <input
-                                type="email"
-                                name="email"
-                                placeholder="Your Email"
-                                required
-                            >
-
-                        </div>
-
-
-                        <div class="contact-input">
-
-                            <textarea
-                                name="message"
-                                placeholder="Your Message"
-                                rows="4"
-                                required
-                            ></textarea>
-
-                        </div>
-
-
-                        <button
-                            type="submit"
-                            class="light-contact-btn"
-                        >
-                            Send Message
-                        </button>
-
-                    </form>
-
-                </div>
-
-            </div>
-
-
-            <!-- WALL SWITCH -->
-
-            <div class="wall-switch">
-
-                <div class="switch-box">
-
-                    <button
-                        id="lightSwitch"
-                        class="switch-button"
-                        type="button"
-                        aria-label="Toggle light"
-                    >
-                        <span></span>
-                    </button>
-
-                </div>
-
-                <p class="switch-label">
-                    SWITCH
-                </p>
-
-            </div>
-
-
-            <!-- SMALL ROOM DECOR -->
-
-            <div class="room-floor"></div>
-
-            <div class="room-shadow"></div>
-
-        </div>
-
-
-        <div class="light-status-wrapper">
-
-            <span class="status-dot"></span>
-
-            <p id="lightStatus">
-                LIGHT OFF
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
     <!-- ================================
          SKILLS SECTION
     ================================= -->
 
-    <section class="skills reveal" id="skills">
+    <section
+        class="skills reveal"
+        id="skills"
+    >
 
         <p class="section-small">
             MY SKILLS
         </p>
 
-        <h2>What I'm Learning</h2>
+
+        <h2>
+            What I'm Learning
+        </h2>
 
 
         <div class="skills-container">
 
+
             <div class="skill">
 
                 <div class="skill-info">
-                    <span>HTML</span>
-                    <span>90%</span>
+
+                    <span>
+                        HTML
+                    </span>
+
+                    <span>
+                        90%
+                    </span>
+
                 </div>
 
+
                 <div class="skill-bar">
+
                     <div class="skill-progress html"></div>
+
                 </div>
 
             </div>
 
 
+
             <div class="skill">
 
                 <div class="skill-info">
-                    <span>CSS</span>
-                    <span>80%</span>
+
+                    <span>
+                        CSS
+                    </span>
+
+                    <span>
+                        80%
+                    </span>
+
                 </div>
 
+
                 <div class="skill-bar">
+
                     <div class="skill-progress css"></div>
+
                 </div>
 
             </div>
+
 
 
             <div class="skill">
 
                 <div class="skill-info">
-                    <span>JavaScript</span>
-                    <span>60%</span>
+
+                    <span>
+                        JavaScript
+                    </span>
+
+                    <span>
+                        60%
+                    </span>
+
                 </div>
 
+
                 <div class="skill-bar">
+
                     <div class="skill-progress javascript"></div>
+
                 </div>
 
             </div>
+
 
         </div>
 
     </section>
+
 
 
     <!-- ================================
          JOURNEY SECTION
     ================================= -->
 
-    <section class="journey reveal" id="journey">
+    <section
+        class="journey reveal"
+        id="journey"
+    >
 
         <p class="section-small">
             MY JOURNEY
         </p>
 
-        <h2>My Learning Journey</h2>
+
+        <h2>
+            My Learning Journey
+        </h2>
+
 
         <p class="journey-intro">
             I am continuously learning and improving my skills
@@ -498,22 +490,30 @@
 
         <div class="journey-container">
 
+
             <div class="journey-card">
 
                 <div class="journey-number">
                     01
                 </div>
 
+
                 <div>
-                    <h3>Started Web Development</h3>
+
+                    <h3>
+                        Started Web Development
+                    </h3>
+
 
                     <p>
                         Started learning the fundamentals of
                         HTML and website structure.
                     </p>
+
                 </div>
 
             </div>
+
 
 
             <div class="journey-card">
@@ -522,16 +522,23 @@
                     02
                 </div>
 
+
                 <div>
-                    <h3>Learning CSS</h3>
+
+                    <h3>
+                        Learning CSS
+                    </h3>
+
 
                     <p>
                         Learning how to create modern,
                         responsive and beautiful designs.
                     </p>
+
                 </div>
 
             </div>
+
 
 
             <div class="journey-card">
@@ -540,16 +547,23 @@
                     03
                 </div>
 
+
                 <div>
-                    <h3>Learning JavaScript</h3>
+
+                    <h3>
+                        Learning JavaScript
+                    </h3>
+
 
                     <p>
                         Learning JavaScript to make websites
                         interactive and dynamic.
                     </p>
+
                 </div>
 
             </div>
+
 
 
             <div class="journey-card">
@@ -558,36 +572,51 @@
                     04
                 </div>
 
+
                 <div>
-                    <h3>Future Goal</h3>
+
+                    <h3>
+                        Future Goal
+                    </h3>
+
 
                     <p>
                         My goal is to become a skilled Web
                         Developer and build real-world projects.
                     </p>
+
                 </div>
 
             </div>
+
 
         </div>
 
     </section>
 
 
+
     <!-- ================================
          PROJECTS SECTION
     ================================= -->
 
-    <section class="projects reveal" id="projects">
+    <section
+        class="projects reveal"
+        id="projects"
+    >
 
         <p class="section-small">
             MY WORK
         </p>
 
-        <h2>My Projects</h2>
+
+        <h2>
+            My Projects
+        </h2>
 
 
         <div class="project-container">
+
 
             <div class="project-card">
 
@@ -595,12 +624,17 @@
                     🌐
                 </div>
 
-                <h3>Personal Portfolio</h3>
+
+                <h3>
+                    Personal Portfolio
+                </h3>
+
 
                 <p>
                     A modern personal portfolio website
                     built with HTML, CSS and JavaScript.
                 </p>
+
 
                 <button
                     class="project-btn"
@@ -612,18 +646,24 @@
             </div>
 
 
+
             <div class="project-card">
 
                 <div class="project-icon">
                     💻
                 </div>
 
-                <h3>Web Design Project</h3>
+
+                <h3>
+                    Web Design Project
+                </h3>
+
 
                 <p>
                     A clean and responsive website design
                     created using modern web technologies.
                 </p>
+
 
                 <button
                     class="project-btn"
@@ -635,18 +675,24 @@
             </div>
 
 
+
             <div class="project-card">
 
                 <div class="project-icon">
                     🚀
                 </div>
 
-                <h3>JavaScript Project</h3>
+
+                <h3>
+                    JavaScript Project
+                </h3>
+
 
                 <p>
                     An interactive project built with
                     JavaScript and modern web features.
                 </p>
+
 
                 <button
                     class="project-btn"
@@ -657,18 +703,24 @@
 
             </div>
 
+
         </div>
 
     </section>
+
 
 
     <!-- ================================
          PROJECT MODAL
     ================================= -->
 
-    <div class="project-modal" id="projectModal">
+    <div
+        class="project-modal"
+        id="projectModal"
+    >
 
         <div class="project-modal-content">
+
 
             <button
                 class="close-modal"
@@ -677,6 +729,7 @@
                 ✕
             </button>
 
+
             <div
                 class="project-modal-icon"
                 id="modalIcon"
@@ -684,15 +737,19 @@
                 🌐
             </div>
 
+
             <h2 id="modalTitle">
                 Project Title
             </h2>
+
 
             <p id="modalDescription">
                 Project information will appear here.
             </p>
 
+
             <div class="project-details">
+
 
                 <div class="project-modal-buttons">
 
@@ -705,6 +762,7 @@
                         🌐 Live Demo
                     </a>
 
+
                     <a
                         id="modalGithub"
                         href="#"
@@ -716,15 +774,28 @@
 
                 </div>
 
-                <p>
-                    <strong>Technologies:</strong>
-                    <span id="modalTech"></span>
-                </p>
 
                 <p>
-                    <strong>Status:</strong>
-                    <span id="modalStatus"></span>
+
+                    <strong>
+                        Technologies:
+                    </strong>
+
+                    <span id="modalTech"></span>
+
                 </p>
+
+
+                <p>
+
+                    <strong>
+                        Status:
+                    </strong>
+
+                    <span id="modalStatus"></span>
+
+                </p>
+
 
             </div>
 
@@ -733,84 +804,278 @@
     </div>
 
 
-    <!-- ================================
-         CONTACT SECTION
-    ================================= -->
 
-    <section class="contact reveal" id="contact">
+    <!-- ==================================================
+         CONTACT + REALISTIC INTERACTIVE LIGHT
+    =================================================== -->
 
-        <p class="section-small">
-            GET IN TOUCH
-        </p>
+    <section
+        class="contact reveal light-section"
+        id="contact"
+    >
 
-        <h2>Contact Fast Scraping</h2>
+        <div class="light-container">
 
-        <p class="contact-intro">
-            Have a project or need web data solutions?
-            Feel free to get in touch with us.
-        </p>
 
-        <form action="https://formspree.io/f/xqpawkra" method="POST">
+            <!-- CONTACT HEADING -->
 
-            <input
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                required
-            >
+            <div class="light-heading">
 
-            <input
-                type="email"
-                name="email"
-                placeholder="Your Email"
-                required
-            >
+                <p class="section-small">
+                    GET IN TOUCH
+                </p>
 
-            <textarea
-                name="message"
-                placeholder="Your Message"
-                required
-            ></textarea>
 
-            <button type="submit">
-                Send Message
-            </button>
+                <h2>
+                    Contact Fast Scraping
+                </h2>
 
-        </form>
 
-        <p class="success-message" style="display: none;">
-            Message sent successfully! ✅
-        </p>
+                <p>
+                    Turn on the light to reveal my contact.
+                </p>
 
-        <div class="social-links">
+            </div>
 
-            <a
-                href="https://www.facebook.com/share/1FM5ojh54t/"
-                target="_blank"
-                rel="noopener"
-            >
-                Facebook
-            </a>
 
-            <a
-                href="https://www.instagram.com/the_khan.02/"
-                target="_blank"
-                rel="noopener"
-            >
-                Instagram
-            </a>
 
-            <a
-                href="https://github.com/wahid023/Piash"
-                target="_blank"
-                rel="noopener"
-            >
-                GitHub
-            </a>
+            <!-- ================================
+                 REALISTIC ROOM
+            ================================= -->
+
+            <div class="room">
+
+
+                <!-- CEILING -->
+
+                <div class="ceiling">
+
+                    <div class="ceiling-light">
+
+                        <div class="bulb">
+
+                            <div class="bulb-filament"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- LIGHT GLOW -->
+
+                <div class="light-glow"></div>
+
+
+
+                <!-- ================================
+                     CONTACT PANEL
+                ================================= -->
+
+                <div class="light-contact">
+
+                    <div class="contact-glow"></div>
+
+
+                    <div class="contact-content">
+
+
+                        <p class="contact-small">
+                            GET IN TOUCH
+                        </p>
+
+
+                        <h2>
+                            Contact Me
+                        </h2>
+
+
+                        <p class="contact-description">
+                            Have a project or idea?
+                            Let's talk.
+                        </p>
+
+
+                        <!-- CONTACT FORM -->
+
+                        <form
+                            action="https://formspree.io/f/xqpawkra"
+                            method="POST"
+                        >
+
+
+                            <div class="contact-input">
+
+                                <input
+                                    type="text"
+                                    name="name"
+                                    placeholder="Your Name"
+                                    required
+                                >
+
+                            </div>
+
+
+
+                            <div class="contact-input">
+
+                                <input
+                                    type="email"
+                                    name="email"
+                                    placeholder="Your Email"
+                                    required
+                                >
+
+                            </div>
+
+
+
+                            <div class="contact-input">
+
+                                <textarea
+                                    name="message"
+                                    placeholder="Your Message"
+                                    rows="4"
+                                    required
+                                ></textarea>
+
+                            </div>
+
+
+
+                            <button
+                                type="submit"
+                                class="light-contact-btn"
+                            >
+                                Send Message
+                            </button>
+
+
+                        </form>
+
+
+                        <!-- SUCCESS MESSAGE -->
+
+                        <p
+                            class="success-message"
+                            style="display: none;"
+                        >
+                            Message sent successfully! ✅
+                        </p>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ================================
+                     WALL SWITCH
+                ================================= -->
+
+                <div class="wall-switch">
+
+
+                    <div class="switch-box">
+
+                        <button
+                            id="lightSwitch"
+                            class="switch-button"
+                            type="button"
+                            aria-label="Toggle light"
+                        >
+
+                            <span></span>
+
+                        </button>
+
+                    </div>
+
+
+                    <p class="switch-label">
+                        SWITCH
+                    </p>
+
+
+                </div>
+
+
+
+                <!-- ROOM FLOOR -->
+
+                <div class="room-floor"></div>
+
+
+                <!-- ROOM SHADOW -->
+
+                <div class="room-shadow"></div>
+
+
+            </div>
+
+
+
+            <!-- ================================
+                 LIGHT STATUS
+            ================================= -->
+
+            <div class="light-status-wrapper">
+
+                <span class="status-dot"></span>
+
+
+                <p id="lightStatus">
+                    LIGHT OFF
+                </p>
+
+            </div>
+
+
+
+            <!-- ================================
+                 SOCIAL LINKS
+            ================================= -->
+
+            <div class="social-links">
+
+
+                <a
+                    href="https://www.facebook.com/share/1FM5ojh54t/"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    Facebook
+                </a>
+
+
+                <a
+                    href="https://www.instagram.com/the_khan.02/"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    Instagram
+                </a>
+
+
+                <a
+                    href="https://github.com/wahid023/Piash"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    GitHub
+                </a>
+
+
+            </div>
+
 
         </div>
 
     </section>
+
 
 
     <!-- ================================
@@ -823,15 +1088,18 @@
             Fast Scraping
         </h3>
 
+
         <p>
             Web Data Solutions
         </p>
+
 
         <p>
             © 2026 Fast Scraping. All Rights Reserved.
         </p>
 
     </footer>
+
 
 
     <!-- ================================
@@ -846,64 +1114,103 @@
     </button>
 
 
+
     <!-- ================================
-         JAVASCRIPT
+         SCROLL REVEAL JAVASCRIPT
     ================================= -->
 
     <script>
+
         // ================================
         // SCROLL REVEAL ANIMATION
         // ================================
 
-        document.addEventListener("DOMContentLoaded", () => {
+        document.addEventListener(
+            "DOMContentLoaded",
+            () => {
 
-            const revealElements =
-                document.querySelectorAll(".reveal");
+                const revealElements =
+                    document.querySelectorAll(".reveal");
 
-            revealElements.forEach((element) => {
 
-                const rect =
-                    element.getBoundingClientRect();
+                revealElements.forEach(
+                    (element) => {
 
-                if (rect.top > window.innerHeight - 100) {
-                    element.classList.add("reveal-hidden");
-                }
+                        const rect =
+                            element.getBoundingClientRect();
 
-            });
 
-            const revealOnScroll = () => {
+                        if (
+                            rect.top >
+                            window.innerHeight - 100
+                        ) {
 
-                revealElements.forEach((element) => {
+                            element.classList.add(
+                                "reveal-hidden"
+                            );
 
-                    const elementTop =
-                        element.getBoundingClientRect().top;
-
-                    if (elementTop < window.innerHeight - 100) {
-
-                        element.classList.remove(
-                            "reveal-hidden"
-                        );
-
-                        element.classList.add("show");
+                        }
 
                     }
+                );
 
-                });
 
-            };
+                const revealOnScroll = () => {
 
-            window.addEventListener(
-                "scroll",
-                revealOnScroll
-            );
+                    revealElements.forEach(
+                        (element) => {
 
-            revealOnScroll();
+                            const elementTop =
+                                element
+                                    .getBoundingClientRect()
+                                    .top;
 
-        });
+
+                            if (
+                                elementTop <
+                                window.innerHeight - 100
+                            ) {
+
+                                element.classList.remove(
+                                    "reveal-hidden"
+                                );
+
+
+                                element.classList.add(
+                                    "show"
+                                );
+
+                            }
+
+                        }
+                    );
+
+                };
+
+
+                window.addEventListener(
+                    "scroll",
+                    revealOnScroll
+                );
+
+
+                revealOnScroll();
+
+            }
+        );
+
     </script>
 
+
+
+    <!-- ================================
+         MAIN JAVASCRIPT
+    ================================= -->
+
     <script src="script.js"></script>
+
 
 </body>
 
 </html>
+```
